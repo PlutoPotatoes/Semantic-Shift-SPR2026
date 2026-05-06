@@ -1,0 +1,9 @@
+transformers==5.2.0
+datasets==2.20.0
+accelerate==0.34.2
+torch==2.2.2
+google-cloud-storage==3.10.0
+google-auth==2.49.1
+nltk==3.9.3
+numpy
+pyarrow

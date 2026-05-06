@@ -1,0 +1,181 @@
+from transformers import (
+    BertForMaskedLM, AutoTokenizer,
+    DataCollatorForLanguageModeling,
+    Trainer, TrainingArguments, EarlyStoppingCallback,
+    TrainerCallback
+)
+from data_streamer import build_decade_balanced_stream, DECADES
+import os
+import json
+import math
+from google.cloud import storage
+from google.oauth2 import service_account
+import math
+#os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+
+# ── Hyperparameters ───────────────────────────────────────────────
+model_name = "emanjavacas/MacBERTh"
+experiment_name = "McBERTh-Pretrain-v1"
+epochs = 2
+learning_rate = 5e-5
+batch_size = 32
+# gradient_accumulation_steps = (batchsize * 8) / (batchsize * #_GPU)
+# 1 GPU:  256 / (32 * 1) = 8
+# 2 GPUs: 256 / (32 * 2) = 4
+gradient_accumulation_steps = 8
+max_steps = math.ceil(2102849 / (batch_size * gradient_accumulation_steps)) * epochs
+max_steps = 50
+logging_steps = 100
+warmup_ratio = 0.05
+weight_decay = 0.01
+save_steps = 500
+mlm_probability = 0.15
+gcs_credentials = "nlp-research-sp26-8499634f1c62.json"
+
+# ── Tokenizer ─────────────────────────────────────────────────────
+# Here are are mostly just using the tokenizer our model already uses. 
+# However, were going add special tokens for each decade our data belongs to 
+# this is how our model will differentiate words used in different time periods
+# ex. <decade_1990>
+print("Start script")
+
+print('Building tokenizer')
+def get_date_tokens(decades):
+    return [f"<decade_{str(d).removesuffix('s')}>" for d in decades]
+
+
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+tokenizer.add_special_tokens(
+    {'additional_special_tokens': get_date_tokens(DECADES)})
+
+
+def tokenize_data(examples):
+    result = tokenizer(examples["text"], max_length=512, truncation=True)
+    if tokenizer.is_fast:
+        result["word_ids"] = [result.word_ids(
+            i) for i in range(len(result["input_ids"]))]
+    return result
+
+
+
+# ── Datasets ──────────────────────────────────────────────────────
+# Because our dataset needs a special license to use we can't download it directly onto our machines.
+# So... we stream it directly into a dataset object from google cloud. M
+# Make sure you have your service account json in the repository. 
+print("building dataset")
+train_dataset = build_decade_balanced_stream(
+    service_account_path=gcs_credentials)
+val_dataset = build_decade_balanced_stream(
+    service_account_path=gcs_credentials, split='valid')
+train_dataset = train_dataset.map(
+    tokenize_data, batch_size=batch_size, batched=True)
+val_dataset = val_dataset.map(
+    tokenize_data,   batch_size=batch_size, batched=True)
+print("dataset complete, formatting model")
+# ── Model ─────────────────────────────────────────────────────────
+# Defining our base model means downloading from huggingface and adding in our new decade tokens.
+# we are also going to add in a callback function that helps it run smoother on google cloud
+model = BertForMaskedLM.from_pretrained(model_name)
+model.resize_token_embeddings(len(tokenizer))
+
+data_collator = DataCollatorForLanguageModeling(
+    tokenizer=tokenizer, mlm=True, mlm_probability=mlm_probability
+)
+
+
+class ContiguousParamsCallback(TrainerCallback):
+    def on_save(self, args, state, control, model=None, **kwargs):
+        for name, param in model.named_parameters():
+            if not param.data.is_contiguous():
+                print(f"[WARNING] Non-contiguous tensor found at save: {name}")
+                param.data = param.data.contiguous()
+        return control
+
+    def on_step_end(self, args, state, control, model=None, **kwargs):
+        # Check every N steps to narrow down when it happens
+        if state.global_step % 100 == 0:
+            for name, param in model.named_parameters():
+                if not param.data.is_contiguous():
+                    print(f"[Step {state.global_step}] Non-contiguous: {name}")
+
+
+# ── Training ──────────────────────────────────────────────────────
+# Set all of our training parameters, define our Trainer object, start training.
+
+# Vertex AI sets AIP_MODEL_DIR automatically — use it as output dir
+print('Training start:')
+output_dir = os.environ.get("AIP_MODEL_DIR", f"Models/{experiment_name}")
+
+#    save_safetensors=false
+training_args = TrainingArguments(
+    output_dir=output_dir,
+    per_device_train_batch_size=batch_size,
+    per_device_eval_batch_size=batch_size,
+    gradient_accumulation_steps=gradient_accumulation_steps,
+    max_steps=max_steps,
+    eval_strategy='steps',
+    eval_steps=save_steps,
+    save_strategy='steps',
+    save_steps=save_steps,
+    load_best_model_at_end=True,
+    metric_for_best_model='eval_loss',
+    greater_is_better=False,
+    save_total_limit=2,
+    logging_dir=f"{output_dir}/logs",
+    logging_steps=logging_steps,
+    warmup_ratio=warmup_ratio,
+    learning_rate=learning_rate,
+    weight_decay=weight_decay,
+    optim='adamw_torch',
+)
+
+
+
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=train_dataset,
+    eval_dataset=val_dataset,
+    data_collator=data_collator,
+    callbacks=[EarlyStoppingCallback(
+        early_stopping_patience=3, early_stopping_threshold=0.001), ContiguousParamsCallback()]
+)
+
+trainer.train()
+print("training complete")
+# ── Save ──────────────────────────────────────────────────────────
+print("saving model")
+
+
+for param in model.parameters():
+    param.data = param.data.contiguous()
+
+save_path = f"{output_dir}/best"
+trainer.save_model(save_path)
+tokenizer.save_pretrained(save_path)
+
+# Save parameters JSON to GCS
+train_loss = [e['loss'] for e in trainer.state.log_history if 'loss' in e]
+eval_loss = [e['eval_loss']
+             for e in trainer.state.log_history if 'eval_loss' in e]
+
+params = {
+    "model_name": model_name,
+    "max_steps": max_steps,
+    "batch_size": batch_size,
+    "gradient_accumulation_steps": gradient_accumulation_steps,
+    "learning_rate": learning_rate,
+    "warmup_ratio": warmup_ratio,
+    "weight_decay": weight_decay,
+    "training_loss": train_loss,
+    "eval_loss": eval_loss,
+}
+
+credentials = service_account.Credentials.from_service_account_file(
+    gcs_credentials)
+client = storage.Client(credentials=credentials)
+bucket = client.bucket("project3102-model-bucket")
+blob = bucket.blob(f"Training-Tests/{experiment_name}/parameters.json")
+blob.upload_from_string(json.dumps(params, indent=4),
+                        content_type="application/json")
+print("Done. Parameters saved to GCS.")
