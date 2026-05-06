@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>README.html</title>
+
+</head>
+
+<body>
+
+<h1>SemEval-2020 Task 1: Unsupervised Lexical Semantic Change Detection</h1>
+
+<p><strong>Authors</strong></p>
+
+<p>Dominik Schlechtweg, Barbara McGillivray, Simon Hengchen, Haim Dubossarsky, and Nina Tahmasebi</p>
+
+<p><strong>Description</strong></p>
+
+<p>This data collection contains the <strong>post-evaluation data</strong> for <a href="https://languagechange.org/semeval">SemEval-2020 Task 1: Unsupervised Lexical Semantic Change Detection</a>:</p>
+
+<ul>
+	<li>the starting kit to download data, and examples for competing in the CodaLab challenge including baselines (<code>starting_kit/</code>),</li>
+	<li>the true binary change scores of the targets for Subtask 1, and their true graded change scores for Subtask 2 (<code>test_data_truth/</code>),</li>
+	<li>the scoring program used to score submissions against the true test data in the evaluation and post-evaluation phase (<code>scoring_program/</code>),</li>
+	<li>the results of the evaluation phase including
+	<ul>
+		<li>the final rankings of the participating teams by their best submission (<code>results/rankings_teams.csv</code>),</li>
+		<li>the submitted files of each team (<code>results/submissions/</code>),</li>
+		<li>an overview of the results for each submission ordered by team (<code>results/submissions_results.csv</code>),</li>
+		<li>analysis plots (<code>plots/</code>) displaying the results:
+		<ul>
+			<li>under <code>per_target/</code> we provide the gold change scores and the normalized prediction error of target words plotted against their frequency and polysemy statistics,</li>
+			<li>under <code>per_team/</code> we provide the model predictions from the best submission per team (per subtask) plotted against frequency/polysemy statistics and performance on gold data (gray lines give the correlation with the respective variable in the gold data); we also provide plots of visualizing the teams&#39; prediction similarities.</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+</ul>
+
+<p>Some remarks:</p>
+
+<ul>
+	<li>the paper referenced below remains the only source for the rankings between teams,</li>
+	<li>some teams were disqualified, and are thus removed from the analyses and the rankings present in the paper,</li>
+	<li>some teams have changed names, resulting in a discrepancy between team names under <code>results/</code> and team names in the paper. The paper contains a key to match old names with new names.</li>
+</ul>
+
+<p><strong>Test Data </strong>for SemEval-2020 Task 1: Unsupervised Lexical Semantic Change Detection can be found using the links below:</p>
+
+<ul>
+	<li><a href="https://www.ims.uni-stuttgart.de/en/research/resources/corpora/sem-eval-ulscd-eng/">English</a></li>
+	<li><a href="https://www.ims.uni-stuttgart.de/en/research/resources/corpora/sem-eval-ulscd-ger/">German</a></li>
+	<li><a href="https://zenodo.org/record/3734089">Latin</a></li>
+	<li><a href="https://zenodo.org/record/3730550">Swedish</a></li>
+</ul>
+
+<p>Please find more information on the provided data in the paper referenced below.</p>
+
+<p><strong>Reference</strong></p>
+
+<p>Dominik Schlechtweg, Barbara McGillivray, Simon Hengchen, Haim Dubossarsky and Nina Tahmasebi. 2020. <a href="https://languagechange.org/semeval">SemEval-2020 Task 1: Unsupervised Lexical Semantic Change Detection</a>. SemEval@COLING2020.</p>
+
+<p>The resources are <a href="https://zenodo.org/record/3931969">freely available for education, research and other non-commercial purposes</a>.</p>
+
+<pre>
+<code>@inproceedings{schlechtweg2020semeval,
+title = "{S}em{E}val-2020 {T}ask 1: {U}nsupervised {L}exical {S}emantic {C}hange {D}etection",
+author = "Schlechtweg, Dominik and McGillivray, Barbara and Hengchen, Simon and Dubossarsky, Haim and Tahmasebi, Nina",
+booktitle = "To appear in Proceedings of the 14th International Workshop on Semantic Evaluation",
+year = "2020",
+address = "Barcelona, Spain",
+publisher = "Association for Computational Linguistics"}</code></pre>
+
+<p>&nbsp;</p>
+
+
+
+</body>
+</html>

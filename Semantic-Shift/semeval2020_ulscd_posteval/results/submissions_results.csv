@@ -1,0 +1,468 @@
+Subtask 1: Binary										
+										
+Team	User	All	English	German	Latin	Swedish	Description	Date	Filename	Is on leaderboard?
+		ACC	ACC	ACC	ACC	ACC				
+#hitsters	lucas.rettenmeier	0.572 (66)	0.622 (5)	0.625 (9)	0.525 (9)	0.516 (9)	mixed_fasttext_glove_word2vec	2020-03-09 18:35:57.948944+00:00	answer.zip	False
+#hitsters	lucas.rettenmeier	0.545 (94)	0.514 (9)	0.479 (16)	0.575 (7)	0.613 (6)	pip_fasttext	2020-03-09 15:00:12.009208+00:00	answer.zip	False
+#hitsters	lucas.rettenmeier	0.537 (105)	0.595 (6)	0.542 (13)	0.400 (14)	0.613 (6)	pip_word2vec	2020-03-09 18:30:45.900359+00:00	answer.zip	False
+#hitsters	lucas.rettenmeier	0.536 (107)	0.541 (8)	0.688 (6)	0.400 (14)	0.516 (9)	mixed_fasttext	2020-03-09 18:36:10.709303+00:00	answer.zip	True
+#hitsters	lucas.rettenmeier	0.520 (121)	0.595 (6)	0.583 (11)	0.450 (12)	0.452 (11)	pip_fasttext_glove_word2vec	2020-03-09 18:31:20.999939+00:00	answer.zip	False
+#hitsters	lucas.rettenmeier	0.490 (142)	0.541 (8)	0.479 (16)	0.650 (4)	0.290 (16)	pip_glove	2020-03-09 18:31:04.201951+00:00	answer.zip	False
+#hitsters	lucas.rettenmeier	0.475 (148)	0.486 (10)	0.479 (16)	0.450 (12)	0.484 (10)	trafo_fasttext_glove_word2vec	2020-03-09 18:32:45.781275+00:00	answer.zip	False
+#hitsters	lucas.rettenmeier	0.468 (150)	0.514 (9)	0.458 (17)	0.450 (12)	0.452 (11)	trafo_fasttext	2020-03-09 18:32:22.101680+00:00	answer.zip	False
+#hitsters	lucas.rettenmeier	0.437 (160)	0.432 (12)	0.458 (17)	0.600 (6)	0.258 (17)	mixed_glove	2020-03-09 18:35:45.181428+00:00	answer.zip	False
+ASV	aniekler	0.523 (118)	0.486 (10)	0.521 (14)	0.600 (6)	0.484 (10)	First run with standard parameters. TEAM SUBMISSION	2020-03-10 10:22:02.573826+00:00	answer.zip	True
+ASV	aniekler	0.523 (118)	0.486 (10)	0.521 (14)	0.600 (6)	0.484 (10)	First run with standard parameters.	2020-02-28 07:36:46.411556+00:00	answer.zip	False
+cbk	cbk	0.554 (81)	0.568 (7)	0.625 (9)	0.475 (11)	0.548 (8)	v1	2020-03-06 12:16:22.049120+00:00	answer.zip	True
+cbk	cbk	0.554 (81)	0.568 (7)	0.625 (9)	0.475 (11)	0.548 (8)	v1	2020-03-06 12:10:34.211182+00:00	answer.zip	False
+cs2020	DeadBread	0.587 (48)	0.595 (6)	0.500 (15)	0.575 (7)	0.677 (4)	v.3	2020-03-13 04:52:53.384157+00:00	answer.zip	True
+cs2020	DeadBread	0.538 (104)	0.541 (8)	0.583 (11)	0.350 (16)	0.677 (4)	first	2020-03-13 04:40:42.448620+00:00	answer.zip	False
+cs2020	DeadBread	0.524 (116)	0.514 (9)	0.521 (14)	0.350 (16)	0.710 (3)	v.2 	2020-03-13 04:48:12.085485+00:00	answer.zip	False
+cs2021	dovvakkin	0.566 (70)	0.595 (6)	0.688 (6)	0.400 (14)	0.581 (7)		2020-03-11 23:06:36.975595+00:00	answer.zip	True
+DCC	fdzr	0.637 (18)	0.649 (4)	0.667 (7)	0.525 (9)	0.710 (3)	v2	2020-03-11 22:48:48.456288+00:00	answer.zip	True
+DCC	fdzr	0.439 (159)	0.432 (12)	0.417 (19)	0.650 (4)	0.258 (17)	version_1 answer	2020-03-10 13:56:11.464355+00:00	answer.zip	False
+Discovery Team	SyrielleM	0.621 (24)	0.568 (7)	0.688 (6)	0.550 (8)	0.677 (4)	Submission 7: Task1_stopwords-ensemble-avg-affprop_Task2_ensemble-affprop-avg	2020-03-11 17:38:16.327743+00:00	answer.zip	False
+Discovery Team	elainezosa	0.603 (32)	0.622 (5)	0.708 (5)	0.500 (10)	0.581 (7)	word2vec embeddings with hamilton alignment + aff prop (ensembling)	2020-03-11 17:44:56.917356+00:00	answer.zip	False
+Discovery Team	elainezosa	0.588 (46)	0.568 (7)	0.688 (6)	0.550 (8)	0.548 (8)	fine-tuned, aff-prop concat, radically filter NE + filter POS + remove small clusters + w2v ensembling	2020-03-11 18:45:22.472442+00:00	answer.zip	False
+Discovery Team	SyrielleM	0.545 (96)	0.514 (9)	0.542 (13)	0.575 (7)	0.548 (8)	Submission 4: Task1_affprop-merging-empty-clusters_Task2_affprop-merging	2020-03-12 17:27:06.542576+00:00	answer.zip	True
+Discovery Team	SyrielleM	0.496 (141)	0.568 (7)	0.458 (17)	0.700 (2)	0.258 (17)	Submission 6: Task1_affprop-finetuned-dynamic-empty-clusters_Task2_avg-finetuned-concat	2020-03-11 16:51:39.369658+00:00	answer.zip	False
+Discovery Team 	matejm	0.603 (33)	0.676 (3)	0.604 (10)	0.550 (8)	0.581 (7)	config 2	2020-03-11 18:00:50.872844+00:00	answer_config_2.zip	False
+Discovery Team 	matejm	0.600 (35)	0.649 (4)	0.542 (13)	0.500 (10)	0.710 (3)	config 3	2020-03-11 14:52:58.289406+00:00	answer_config_3.zip	False
+Discovery Team 	matejm	0.593 (43)	0.649 (4)	0.604 (10)	0.475 (11)	0.645 (5)	config 8	2020-03-11 18:16:42.790155+00:00	answer_config_8.zip	False
+Discovery Team 	lampa112	0.573 (62)	0.622 (5)	0.604 (10)	0.550 (8)	0.516 (9)	"fine_tuned_concat_aff_prop_radically_filtered_stop_words_high
+thresholds = {'english': 0.245,
+              'german': 0.382,
+              'latin': 0.316,
+              'swedish': 0.427
+              }
+
+"	2020-03-11 16:12:32.235046+00:00	answer.zip	False
+Discovery Team 	lampa112	0.552 (87)	0.703 (2)	0.667 (7)	0.450 (12)	0.387 (13)	"fine_tuned_concat_aff_prop_stop_words
+
+thresholds = {'english': 0.3,
+              'german': 0.43,
+              'latin': 0.4,
+              'swedish':0.4
+              }"	2020-03-10 09:56:02.028928+00:00	answer.zip	False
+ECNUCS	Qing	0.630 (22)	0.622 (5)	0.688 (6)	0.500 (10)	0.710 (3)		2020-03-12 14:49:33.908123+00:00	answer_wordnet-en.zip	True
+ECNUCS	Qing	0.603 (31)	0.514 (9)	0.688 (6)	0.500 (10)	0.710 (3)	skip-gram windowsize 5 dim 300 with  Orthogonal Procrustes. threshold 0.3 0.4 0.45 0.5 for task1	2020-03-12 14:36:12.781267+00:00	answer.zip	False
+ECNUCS	Qing	0.598 (38)	0.622 (5)	0.688 (6)	0.375 (15)	0.710 (3)		2020-03-12 14:37:55.313316+00:00	answer_7means_t0.4.zip	False
+ECNUCS	Qing	0.578 (57)	0.649 (4)	0.604 (10)	0.350 (16)	0.710 (3)	use multilingual bert to get rep for each word, then use kmeans on c1+c2 to get clusters,  compute cosine distance of distribution1 between distribution2.   In the submission, k=5, threshold for task1 t=0.5	2020-03-12 13:14:59.042874+00:00	answer_5means_t0.5.zip	False
+ECNUCS	Qing	0.573 (63)	0.649 (4)	0.583 (11)	0.350 (16)	0.710 (3)	use multilingual bert to get rep for each word, then use kmeans on c1+c2 to get clusters,  compute cosine distance of distribution1 between distribution2.   In the submission, k=7, threshold for task1 t=0.5	2020-03-12 05:01:24.595461+00:00	answer_7means_t0.5.zip	False
+ECNUCS	Qing	0.558 (75)	0.541 (8)	0.646 (8)	0.725 (1)	0.323 (15)	skip-gram windowsize 5 dim 300 with  Orthogonal Procrustes. threshold 0.35 for task1	2020-03-12 13:10:11.522709+00:00	answer.zip	False
+ECNUCS	Qing	0.542 (98)	0.568 (7)	0.542 (13)	0.350 (16)	0.710 (3)	use multilingual bert to get rep of the sentence with target word, then use kmeans on c1+c2 to get clusters,  compute cosine distance of distribution1 between distribution2.   In the submission, k=3, threshold for task1 t=0.35	2020-03-12 13:58:20.078094+00:00	answer_3means_t0.35_sen.zip	False
+Eleri Sarsfield 	elerisarsfield	0.526 (115)	0.568 (7)	0.479 (16)	0.575 (7)	0.484 (10)		2020-03-12 19:31:17.348306+00:00	answer.zip	True
+Eleri Sarsfield 	elerisarsfield	0.526 (115)	0.568 (7)	0.479 (16)	0.575 (7)	0.484 (10)		2020-03-11 22:40:43.958637+00:00	answer.zip	False
+Entity	vaibhav29498	0.599 (37)	0.676 (3)	0.667 (7)	0.475 (11)	0.581 (7)	GloVe + VI (Emb size:50, Window:10, Iterations:60)	2020-03-08 17:26:18.041050+00:00	answer.zip	True
+Entity	vaibhav29498	0.527 (112)	0.568 (7)	0.583 (11)	0.475 (11)	0.484 (10)	GloVe + VI	2020-02-22 23:48:11.565866+00:00	answer.zip	False
+in vain	jenskaiser	0.598 (39)	0.541 (8)	0.688 (6)	0.550 (8)	0.613 (6)	"win10-k5-tNone-dim5-ep30
+task1 LND &gt;= mean
+task2 CD"	2020-03-08 10:52:41.200310+00:00	answer.zip	False
+in vain	jenskaiser	0.595 (40)	0.595 (6)	0.688 (6)	0.550 (8)	0.548 (8)	"win10-k5-tNone-dim8-ep30
+task1 LND &gt;= mean
+task2 CD"	2020-03-09 16:01:00.080309+00:00	answer.zip	True
+in vain	jenskaiser	0.582 (55)	0.486 (10)	0.729 (4)	0.500 (10)	0.613 (6)	"win10-k5-t0.001-dim5-ep50
+task1 LND &gt;= mean
+task2 CD"	2020-03-08 22:31:54.550143+00:00	answer.zip	False
+Interesting Linguistic Lexical Change	hubbsa	0.573 (64)	0.649 (4)	0.479 (16)	0.550 (8)	0.613 (6)	"Submission 6: 
+same as submission 5, but the model estimates 5 senses (instead of 4). "	2020-03-12 14:45:44.173242+00:00	submission6_scanmodel_5senses.zip	False
+Interesting Linguistic Lexical Change	hubbsa	0.527 (113)	0.595 (6)	0.479 (16)	0.550 (8)	0.484 (10)	Out of curiosity I am also submitting the count vector baseline. Class threshold is determined by taking the median. 	2020-03-11 21:06:06.600638+00:00	submission4_countvectors.zip	False
+Interesting Linguistic Lexical Change	hubbsa	0.520 (120)	0.514 (9)	0.479 (16)	0.475 (11)	0.613 (6)	"Submission 7: ensemble model of submission 2, 5 and 6.
+The score is the average of the 3 KL divergences, the class is the median of the three class labels (majority vote). "	2020-03-12 14:46:53.876941+00:00	submission7_majorityvote.zip	True
+Interesting Linguistic Lexical Change	hubbsa	0.506 (133)	0.432 (12)	0.479 (16)	0.500 (10)	0.613 (6)	"Submission 5: 
+I use the same model as in submission 2, but estimate 4 senses per word (instead of 3). 
+
+Another difference is that I changed the preprocessing for German: &quot;d&quot; has been added to the stopwords and is removed from the corpus. "	2020-03-12 14:44:53.465267+00:00	submission5_scanmodel_4senses.zip	False
+Interesting Linguistic Lexical Change	hubbsa	0.502 (137)	0.541 (8)	0.521 (14)	0.400 (14)	0.548 (8)	This submission applies the scan model by Lea Frermann using a window of 5 words and estimating 3 senses for every word. The degree of change is measured by the KL divergence over the sense probability distributions. The threshold for determining classes is the median. The English, German and Swedish corpus has been preprocessed by removing stopwords using nltk stopwords, the Latin corpus has not been preprocessed. 	2020-03-11 21:00:53.904256+00:00	submission2_scanmodel.zip	False
+Interesting Linguistic Lexical Change	hubbsa	0.500 (138)	0.486 (10)	0.479 (16)	0.550 (8)	0.484 (10)	"Dummy method based on number of sentences in which a target occurs. Just used for testing.
+
+Score = abs(len(t2_sents)-len(t1_sents)) /  (len(t1_sents) +len(t2_sents))
+
+Threshold for classes is determined by taking the median. "	2020-03-05 10:18:23.036535+00:00	submission1_naive_sentencelength_method.zip	False
+Interesting Linguistic Lexical Change	hubbsa	0.484 (145)	0.432 (12)	0.521 (14)	0.500 (10)	0.484 (10)	Out of curiosity I am also submitting the frequency baseline. Class threshold is determined by taking the median. 	2020-03-11 21:05:16.242002+00:00	submission3_frequencybaseline.zip	False
+J.U.S.T	Hemam	0.480 (147)	0.486 (10)	0.479 (16)	0.375 (15)	0.581 (7)	"Approach 2 ""Final"""	2020-03-12 00:11:34.702018+00:00	answer.zip	True
+J.U.S.T	Hemam	0.452 (155)	0.270 (16)	0.479 (16)	0.575 (7)	0.484 (10)	English only with Jensen-Shannon distance 	2020-02-28 14:55:01.566709+00:00	answer.zip	False
+J.U.S.T	Hemam	0.435 (161)	0.459 (11)	0.438 (18)	0.425 (13)	0.419 (12)		2020-03-12 00:03:31.188722+00:00	answer.zip	False
+J.U.S.T	Hemam	0.435 (161)	0.459 (11)	0.438 (18)	0.425 (13)	0.419 (12)	Approach1_final	2020-03-11 23:58:19.170575+00:00	answer.zip	False
+J.U.S.T	Hemam	0.435 (161)	0.459 (11)	0.438 (18)	0.425 (13)	0.419 (12)		2020-03-11 23:31:09.306386+00:00	answer.zip	False
+J.U.S.T	Hemam	0.415 (167)	0.270 (16)	0.479 (16)	0.425 (13)	0.484 (10)		2020-03-11 00:09:06.651658+00:00	answer.zip	False
+J.U.S.T	Hemam	0.415 (167)	0.270 (16)	0.479 (16)	0.425 (13)	0.484 (10)	Eng+Lat	2020-03-11 00:02:40.862850+00:00	answer.zip	False
+JCT	Eamar	0.636 (20)	0.649 (4)	0.688 (6)	0.500 (10)	0.710 (3)	v1-freq20-dim300-per90-cert50  with 90 hard coded	2020-03-08 11:17:25.786561+00:00	v1-freq20-dim300-per90-cert50.zip	False
+JCT	Eamar	0.591 (45)	0.622 (5)	0.583 (11)	0.450 (12)	0.710 (3)	v7-freq20-dim300-per90-cert40	2020-03-11 17:20:24.473617+00:00	v7-freq20-dim300-per90-cert40.zip	False
+JCT	Eamar	0.558 (77)	0.568 (7)	0.562 (12)	0.425 (13)	0.677 (4)	v2-freq20-dim300-per90-cert50	2020-03-11 17:13:15.008985+00:00	v2-freq20-dim300-per90-cert50.zip	False
+JCT	Eamar	0.553 (85)	0.595 (6)	0.583 (11)	0.550 (8)	0.484 (10)	v4-freq20-dim300-per70-cert50	2020-03-11 17:14:50.643457+00:00	v4-freq20-dim300-per70-cert50.zip	False
+JCT	Eamar	0.552 (86)	0.514 (9)	0.583 (11)	0.500 (10)	0.613 (6)	v8-freq20-dim300-per80-cert40	2020-03-11 17:31:31.694469+00:00	v8-freq20-dim300-per80-cert40.zip	False
+JCT	Eamar	0.546 (93)	0.514 (9)	0.583 (11)	0.475 (11)	0.613 (6)	v3-freq20-dim300-per80-cert50	2020-03-11 17:14:00.860264+00:00	v3-freq20-dim300-per80-cert50.zip	False
+JCT	Eamar	0.542 (99)	0.514 (9)	0.562 (12)	0.575 (7)	0.516 (9)	v10-freq20-dim300-per60-cert40	2020-03-11 17:46:18.585071+00:00	v10-freq20-dim300-per60-cert40.zip	True
+JCT	Eamar	0.541 (101)	0.486 (10)	0.562 (12)	0.600 (6)	0.516 (9)	v5-freq20-dim300-per60-cert50	2020-03-11 17:15:42.611729+00:00	v5-freq20-dim300-per60-cert50.zip	False
+JCT	Eamar	0.528 (111)	0.514 (9)	0.583 (11)	0.500 (10)	0.516 (9)	v9-freq20-dim300-per70-cert40	2020-03-11 17:40:48.693472+00:00	v9-freq20-dim300-per70-cert40.zip	False
+JCT	Eamar	0.523 (117)	0.568 (7)	0.562 (12)	0.575 (7)	0.387 (13)	v6-freq20-dim300-per50-cert50	2020-03-11 17:16:31.914506+00:00	v6-freq20-dim300-per50-cert50.zip	False
+K.L	kamel	0.513 (126)	0.514 (9)	0.479 (16)	0.575 (7)	0.484 (10)		2020-03-11 23:03:41.283655+00:00	answer.zip	True
+K.L	kamel	0.513 (126)	0.514 (9)	0.479 (16)	0.575 (7)	0.484 (10)		2020-02-28 14:19:58.919608+00:00	answer.zip	False
+K.L	kamel	0.424 (164)	0.432 (12)	0.354 (22)	0.650 (4)	0.258 (17)		2020-02-24 11:25:42.150076+00:00	answer.zip	False
+learner	snoopy	0.584 (51)	0.595 (6)	0.708 (5)	0.325 (17)	0.710 (3)		2020-03-12 17:10:26.167196+00:00	answer.zip	False
+learner	snoopy	0.584 (51)	0.595 (6)	0.708 (5)	0.325 (17)	0.710 (3)		2020-03-12 17:10:12.230089+00:00	answer.zip	False
+learner	snoopy	0.579 (56)	0.595 (6)	0.688 (6)	0.325 (17)	0.710 (3)		2020-03-12 17:48:51.096843+00:00	answer.zip	True
+learner	snoopy	0.567 (69)	0.595 (6)	0.688 (6)	0.375 (15)	0.613 (6)		2020-03-12 17:10:52.024150+00:00	answer.zip	False
+Life-Language	ehsaneddin	0.686 (2)	0.703 (2)	0.750 (3)	0.550 (8)	0.742 (2)	language model based domain shift analysis, thrshld for German is modifed.	2020-03-11 12:24:46.989701+00:00	answer.zip	False
+Life-Language	ehsaneddin	0.686 (2)	0.703 (2)	0.750 (3)	0.550 (8)	0.742 (2)		2020-03-11 12:23:53.239854+00:00	answer.zip	False
+Life-Language	ehsaneddin	0.676 (3)	0.703 (2)	0.708 (5)	0.550 (8)	0.742 (2)	language model based domain shift analysis, no thrshld modification 	2020-03-11 12:46:05.884870+00:00	answer_5.zip	False
+Life-Language	ehsaneddin	0.676 (3)	0.703 (2)	0.708 (5)	0.550 (8)	0.742 (2)		2020-03-11 08:44:49.217258+00:00	answer.zip	False
+Life-Language	ehsaneddin	0.676 (3)	0.703 (2)	0.708 (5)	0.550 (8)	0.742 (2)		2020-03-10 21:34:23.732143+00:00	answer.zip	False
+Life-Language	ehsaneddin	0.676 (3)	0.703 (2)	0.708 (5)	0.550 (8)	0.742 (2)		2020-03-10 21:34:13.314848+00:00	answer.zip	False
+Life-Language	ehsaneddin	0.668 (4)	0.703 (2)	0.708 (5)	0.550 (8)	0.710 (3)		2020-03-11 12:38:55.998106+00:00	answer_3.zip	False
+Life-Language	ehsaneddin	0.663 (8)	0.676 (3)	0.708 (5)	0.525 (9)	0.742 (2)	language model based domain shift analysis, bootstrapped	2020-03-12 22:32:45.957620+00:00	answer_final.zip	True
+Life-Language	ehsaneddin	0.662 (9)	0.649 (4)	0.708 (5)	0.550 (8)	0.742 (2)	language model based domain shift analysis, thrshld for English is modifed.	2020-03-11 12:43:02.850589+00:00	answer_4.zip	False
+Life-Language	ehsaneddin	0.657 (12)	0.703 (2)	0.708 (5)	0.475 (11)	0.742 (2)	language model based domain shift analysis, thrshld for Latin is modifed.	2020-03-11 12:30:24.119992+00:00	answer_2.zip	False
+LYNX	jinan	0.665 (5)	0.649 (4)	0.729 (4)	0.700 (2)	0.581 (7)	answer_sgns_tr_win5_q25	2020-03-10 17:22:31.341721+00:00	answer_sgns_tr_win5_q25.zip	False
+LYNX	jinan	0.663 (7)	0.622 (5)	0.688 (6)	0.600 (6)	0.742 (2)	answer_sgns_tr_win10_q25	2020-03-10 17:23:38.262247+00:00	answer_sgns_tr_win10_q25.zip	False
+LYNX	jinan	0.652 (14)	0.568 (7)	0.771 (2)	0.625 (5)	0.645 (5)	answer_sgns_tr_win10_q20	2020-03-10 17:24:05.756003+00:00	answer_sgns_tr_win10_q20.zip	False
+LYNX	jinan	0.638 (17)	0.541 (8)	0.729 (4)	0.700 (2)	0.581 (7)	answer_sgns_tr_win5_q22	2020-03-11 15:18:41.866818+00:00	answer_sgns_tr_win5_q22.zip	True
+LYNX	jinan	0.585 (50)	0.541 (8)	0.625 (9)	0.625 (5)	0.548 (8)	answer_sgns_tr_win5_q20	2020-03-11 15:09:18.062398+00:00	answer_sgns_tr_win5_q20.zip	False
+LYNX	jinan	0.563 (71)	0.541 (8)	0.667 (7)	0.625 (5)	0.419 (12)	answer_sgns_tr_iter5_q50	2020-03-11 15:02:44.555365+00:00	answer_sgns_tr_iter5_q50.zip	False
+M'kay	Emkay	0.601 (34)	0.514 (9)	0.646 (8)	0.600 (6)	0.645 (5)	w2v, cca, cosine , a median threshold and almost no clue what  I am doing here 	2020-02-23 16:43:18.175326+00:00	answer.zip	True
+NLPCR	DavidRother	0.584 (52)	0.730 (1)	0.542 (13)	0.450 (12)	0.613 (6)	BERT Embeddings AutoEncoded mapped with Umap and sense clustered with HDBSCAN	2020-03-11 11:34:08.076088+00:00	answer.zip	False
+NLPCR	DavidRother	0.577 (58)	0.649 (4)	0.500 (15)	0.450 (12)	0.710 (3)	BERT Embeddings AutoEncoded mapped with Umap and sense clustered with HDBSCAN	2020-03-11 10:57:31.670709+00:00	answer.zip	False
+NLPCR	DavidRother	0.557 (78)	0.622 (5)	0.542 (13)	0.450 (12)	0.613 (6)	BERT Embeddings AutoEncoded mapped with Umap and sense clustered with HDBSCAN	2020-03-11 11:12:35.955690+00:00	answer.zip	False
+NLPCR	DavidRother	0.556 (79)	0.676 (3)	0.479 (16)	0.425 (13)	0.645 (5)	BERT Embeddings AutoEncoded mapped with Umap and sense clustered with HDBSCAN	2020-03-11 00:53:39.825064+00:00	answer.zip	False
+NLPCR	DavidRother	0.553 (84)	0.622 (5)	0.521 (14)	0.425 (13)	0.645 (5)	BERT Embeddings AutoEncoded mapped with Umap and sense clustered with HDBSCAN	2020-03-11 00:28:57.986932+00:00	answer.zip	False
+NLPCR	DavidRother	0.548 (90)	0.568 (7)	0.479 (16)	0.500 (10)	0.645 (5)	BERT Embeddings AutoEncoded mapped with Umap and sense clustered with HDBSCAN	2020-03-11 10:46:05.078708+00:00	answer.zip	False
+NLPCR	DavidRother	0.545 (95)	0.568 (7)	0.396 (20)	0.475 (11)	0.742 (2)		2020-03-11 13:30:11.079290+00:00	answer.zip	True
+NLPCR	DavidRother	0.544 (97)	0.568 (7)	0.479 (16)	0.450 (12)	0.677 (4)	BERT Embeddings AutoEncoded mapped with Umap and sense clustered with HDBSCAN	2020-03-11 00:41:10.989078+00:00	answer.zip	False
+NLPCR	DavidRother	0.505 (135)	0.595 (6)	0.417 (19)	0.300 (18)	0.710 (3)	BERT Embeddings AutoEncoded mapped with Umap and sense clustered with HDBSCAN #1	2020-03-10 18:37:10.290691+00:00	answer.zip	False
+NLPCR	DavidRother	0.489 (143)	0.378 (14)	0.542 (13)	0.325 (17)	0.710 (3)	BERT Embeddings mapped with Umap and sense clustered with HDBSCAN #1	2020-03-09 18:21:47.612134+00:00	answer.zip	False
+NO-center 	sqr_hussain	0.416 (166)	0.432 (12)	0.375 (21)	0.600 (6)	0.258 (17)		2020-03-13 04:56:02.759086+00:00	answer.zip	True
+Random 	p.cassotti	0.554 (83)	0.486 (10)	0.479 (16)	0.475 (11)	0.774 (1)	tri	2020-03-05 09:55:17.465577+00:00	answer_tri.zip	False
+Random 	p.cassotti	0.541 (103)	0.622 (5)	0.625 (9)	0.400 (14)	0.516 (9)	ppmi	2020-03-05 09:55:26.244262+00:00	answer_ppmi.zip	False
+Random 	p.cassotti	0.533 (109)	0.595 (6)	0.646 (8)	0.375 (15)	0.516 (9)	overall (computed only on gm score) - pearson - NO COLLOCATION	2020-03-06 15:14:59.494027+00:00	answer_overall_pearson.zip	False
+Random 	p.cassotti	0.513 (124)	0.486 (10)	0.500 (15)	0.550 (8)	0.516 (9)	coll	2020-03-05 09:55:33.245754+00:00	answers_coll.zip	False
+Random 	p.cassotti	0.509 (128)	0.622 (5)	0.500 (15)	0.400 (14)	0.516 (9)	overall	2020-03-05 09:55:04.641946+00:00	answer_overall.zip	False
+Random 	p.cassotti	0.508 (129)	0.568 (7)	0.542 (13)	0.375 (15)	0.548 (8)	overall (computed only on gm score) - nbrs	2020-03-06 15:05:03.182539+00:00	answer_overall_nbrs.zip	False
+Random 	p.cassotti	0.453 (154)	0.432 (12)	0.458 (17)	0.500 (10)	0.419 (12)	tri positional	2020-03-11 19:31:20.514283+00:00	answer_positional.zip	True
+Random 	p.cassotti	0.441 (158)	0.378 (14)	0.500 (15)	0.400 (14)	0.484 (10)	BUG-best score	2020-03-04 10:06:10.897035+00:00	answer.zip	False
+Random 	p.cassotti	0.417 (165)	0.378 (14)	0.375 (21)	0.400 (14)	0.516 (9)	BUG-best score ppmi	2020-03-05 09:34:58.953889+00:00	answer.zip	False
+RIJP	RanIwamoto	0.511 (127)	0.541 (8)	0.500 (15)	0.550 (8)	0.452 (11)	neugauss 1	2020-03-10 09:52:54.668868+00:00	answer_gauss.zip	False
+RIJP	RanIwamoto	0.508 (130)	0.514 (9)	0.542 (13)	0.525 (9)	0.452 (11)	neugauss 1.1	2020-03-10 09:56:10.475302+00:00	answer_gauss.zip	True
+RIJP	RanIwamoto	0.485 (144)	0.514 (9)	0.438 (18)	0.600 (6)	0.387 (13)	gauss 0.5	2020-03-10 09:33:42.985216+00:00	answer_gauss.zip	False
+RIJP	RanIwamoto	0.481 (146)	0.514 (9)	0.500 (15)	0.425 (13)	0.484 (10)	gauss 0.6	2020-03-10 09:36:56.245744+00:00	answer_gauss.zip	False
+RIJP	RanIwamoto	0.469 (149)	0.568 (7)	0.417 (19)	0.600 (6)	0.290 (16)	gauss 0.4	2020-03-10 09:29:00.457154+00:00	answer_gauss.zip	False
+RIJP	RanIwamoto	0.460 (152)	0.541 (8)	0.396 (20)	0.550 (8)	0.355 (14)	neugauss 0.9	2020-03-10 09:51:59.852315+00:00	answer_gauss.zip	False
+RIJP	RanIwamoto	0.459 (153)	0.541 (8)	0.479 (16)	0.525 (9)	0.290 (16)	neugauss 0.7	2020-03-10 09:44:55.607150+00:00	answer_gauss.zip	False
+RIJP	RanIwamoto	0.451 (156)	0.514 (9)	0.438 (18)	0.500 (10)	0.355 (14)	neugauss 0.8	2020-03-10 09:50:26.206306+00:00	answer_gauss.zip	False
+RIJP	RanIwamoto	0.434 (162)	0.514 (9)	0.375 (21)	0.300 (18)	0.548 (8)		2020-03-03 15:08:13.549671+00:00	answer_gauss.zip	False
+RIJP	RanIwamoto	0.381 (168)	0.378 (14)	0.292 (23)	0.500 (10)	0.355 (14)		2020-03-03 12:55:58.869852+00:00	answer_word2vec.zip	False
+RPI-Trust 	mgruppi	0.660 (10)	0.649 (4)	0.750 (3)	0.500 (10)	0.742 (2)	"v9
+All features, higher threshold"	2020-03-13 03:17:39.408740+00:00	answer_v9.zip	False
+RPI-Trust 	mgruppi	0.600 (36)	0.568 (7)	0.604 (10)	0.550 (8)	0.677 (4)	"v6
+Ensemble cosine+inverse_neighborhood+frequency_direction"	2020-03-12 05:25:27.327537+00:00	answer_v6.zip	False
+RPI-Trust 	mgruppi	0.594 (42)	0.568 (7)	0.667 (7)	0.400 (14)	0.742 (2)	"v10
+Even higher threshold (0.8)"	2020-03-13 03:19:17.829641+00:00	answer_v10.zip	True
+RPI-Trust 	mgruppi	0.594 (41)	0.541 (8)	0.583 (11)	0.575 (7)	0.677 (4)	"v5
+Using feature ensemble for classification + using aligned cosine for ranking"	2020-03-11 19:30:55.319274+00:00	answer_v5.zip	False
+RPI-Trust 	mgruppi	0.594 (41)	0.541 (8)	0.583 (11)	0.575 (7)	0.677 (4)	"v4
+apply feature selection to the previous model to avoid noisy features"	2020-03-11 19:19:27.701528+00:00	answer_v4.zip	False
+RPI-Trust 	mgruppi	0.587 (47)	0.514 (9)	0.646 (8)	0.575 (7)	0.613 (6)	"v2
+Using model ensemble to determine semantic change from word embedings (word2vec) and word frequency."	2020-03-09 22:48:42.012407+00:00	answer.zip	False
+RPI-Trust 	mgruppi	0.583 (54)	0.703 (2)	0.521 (14)	0.625 (5)	0.484 (10)	"v8
+Parameter tweaking"	2020-03-13 03:15:08.199746+00:00	answer_v8.zip	False
+RPI-Trust 	mgruppi	0.563 (72)	0.622 (5)	0.521 (14)	0.625 (5)	0.484 (10)	"v7
+Mean neighborhood change as a feature + adjust decision threshold"	2020-03-13 02:47:29.516293+00:00	answer_v7.zip	False
+RPI-Trust 	mgruppi	0.554 (82)	0.459 (11)	0.625 (9)	0.550 (8)	0.581 (7)	"v3
+Add mean neighborhood distance to previous submission. Using word vectors and word frequency to predict change."	2020-03-10 00:01:25.699447+00:00	answer_mnd.zip	False
+RPI-Trust 	mgruppi	0.449 (157)	0.432 (12)	0.479 (16)	0.625 (5)	0.258 (17)	"v1
+Simple method with word embeddings and vector differences"	2020-03-08 20:46:47.496519+00:00	answer_diff.zip	False
+Schwäbischschwätza_tue	basagashka	0.612 (26)	0.568 (7)	0.583 (11)	0.650 (4)	0.645 (5)	v7	2020-03-11 16:10:36.554924+00:00	answer.zip	False
+Schwäbischschwätza_tue	basagashka	0.603 (30)	0.568 (7)	0.646 (8)	0.650 (4)	0.548 (8)	v10	2020-03-11 21:23:30.959181+00:00	answer.zip	True
+Schwäbischschwätza_tue	basagashka	0.603 (30)	0.568 (7)	0.646 (8)	0.650 (4)	0.548 (8)	v9	2020-03-11 16:12:33.234502+00:00	answer.zip	False
+Schwäbischschwätza_tue	basagashka	0.575 (61)	0.568 (7)	0.646 (8)	0.375 (15)	0.710 (3)	v1	2020-03-06 14:11:37.227177+00:00	answer.zip	False
+Schwäbischschwätza_tue	basagashka	0.516 (122)	0.459 (11)	0.583 (11)	0.375 (15)	0.645 (5)	v8	2020-03-11 16:11:35.214409+00:00	answer.zip	False
+Schwäbischschwätza_tue	basagashka	0.507 (132)	0.459 (11)	0.646 (8)	0.375 (15)	0.548 (8)	v6	2020-03-11 16:08:39.572452+00:00	answer.zip	False
+Schwäbischschwätza_tue 	piaschwarz	0.560 (74)	0.459 (11)	0.583 (11)	0.650 (4)	0.548 (8)	v2	2020-03-10 20:47:44.060898+00:00	answer.zip	False
+Schwäbischschwätza_tue 	piaschwarz	0.558 (76)	0.568 (7)	0.646 (8)	0.375 (15)	0.645 (5)	v3	2020-03-10 20:51:49.610393+00:00	answer.zip	False
+Skurt	Amaru	0.629 (23)	0.568 (7)	0.562 (12)	0.675 (3)	0.710 (3)	"A model based on contextualized embeddings via XLMR.
+Task 1 is solved with a KNN clustering approach
+Task 2 is solved based on source classification error (less error ~ more change)"	2020-03-11 10:28:41.787551+00:00	results2.zip	True
+Skurt	Amaru	0.629 (23)	0.568 (7)	0.562 (12)	0.675 (3)	0.710 (3)	A simple model based on XLMR and KNN-clustering. 	2020-03-11 09:42:57.010594+00:00	results.zip	False
+UG Student Intern 	mpoemsl	0.639 (15)	0.568 (7)	0.729 (4)	0.550 (8)	0.710 (3)	V3: SGNS only (word2vec, vecmap-op)	2020-03-09 14:23:58.220397+00:00	answer.zip	True
+UG Student Intern 	mpoemsl	0.639 (15)	0.568 (7)	0.729 (4)	0.550 (8)	0.710 (3)	V2: BERT only (bert-base-multilingual-cased)	2020-03-09 14:21:56.242499+00:00	answer.zip	False
+UG Student Intern 	mpoemsl	0.639 (15)	0.568 (7)	0.729 (4)	0.550 (8)	0.710 (3)	V1: Weighted Ensemble (word2vec, vecmap-op, bert-base-multilingual-cased)	2020-03-05 18:52:56.087837+00:00	answer.zip	False
+UiO-UVA	akutuzov	0.587 (49)	0.541 (8)	0.646 (8)	0.450 (12)	0.710 (3)	elmo_fine_detect_specific1/3	2020-03-12 13:15:05.119034+00:00	elmo_fine_detect_specific.zip	False
+UiO-UVA	akutuzov	0.550 (88)	0.486 (10)	0.583 (11)	0.550 (8)	0.581 (7)	elmo_bigone_ap_cosine_1/3	2020-03-11 16:38:25.269837+00:00	elmo_bigone_top_ap_cosine.zip	False
+UiO-UVA	akutuzov	0.547 (91)	0.459 (11)	0.646 (8)	0.375 (15)	0.710 (3)	bert_last4_detect_cosine 	2020-03-12 23:04:05.867910+00:00	bert_last4_detect_cosine.zip	False
+UiO-UVA	akutuzov	0.531 (110)	0.432 (12)	0.562 (12)	0.550 (8)	0.581 (7)	elmo_bigone_ap_jsd_1/3	2020-03-11 18:58:12.251082+00:00	elmo_bigone_top_ap_jsd.zip	False
+UiO-UVA	akutuzov	0.531 (110)	0.432 (12)	0.562 (12)	0.550 (8)	0.581 (7)	elmo_single_ap_jsd_1/3	2020-03-11 18:57:20.158163+00:00	elmo_single_top_ap_jsd.zip	False
+UiO-UVA	akutuzov	0.531 (110)	0.432 (12)	0.562 (12)	0.550 (8)	0.581 (7)	elmo_single_ap_cosine_1/3	2020-03-11 15:07:42.408415+00:00	elmo_single_top_ap_cosine.zip	False
+UiO-UVA	akutuzov	0.515 (123)	0.405 (13)	0.562 (12)	0.575 (7)	0.516 (9)	elmo_bigone_ap_cosine_1/2	2020-03-11 16:38:52.743000+00:00	elmo_bigone_top_ap_cosine_half.zip	False
+UiO-UVA	akutuzov	0.507 (131)	0.486 (10)	0.438 (18)	0.525 (9)	0.581 (7)	bert_top_ap_cosine	2020-03-12 23:12:06.320685+00:00	bert_top_ap_cosine.zip	True
+UiO-UVA	akutuzov	0.504 (136)	0.486 (10)	0.438 (18)	0.575 (7)	0.516 (9)	elmo_single_ap_cosine_1/2	2020-03-11 15:25:57.757338+00:00	elmo_single_top_ap_cosine_half.zip	False
+UiO-UVA	akutuzov	0.497 (140)	0.514 (9)	0.604 (10)	0.450 (12)	0.419 (12)	elmo_single_detect_1/2	2020-03-11 23:36:09.180968+00:00	elmo_single_top_detect.zip	False
+Unique	xc2628	0.611 (27)	0.703 (2)	0.708 (5)	0.325 (17)	0.710 (3)		2020-03-12 12:48:43.046618+00:00	answer.zip	False
+Unique	xc2628	0.605 (29)	0.676 (3)	0.708 (5)	0.325 (17)	0.710 (3)		2020-03-12 12:51:03.105709+00:00	answer.zip	False
+Unique	xc2628	0.571 (67)	0.541 (8)	0.708 (5)	0.325 (17)	0.710 (3)		2020-03-12 12:54:18.853826+00:00	answer.zip	True
+Unique	xc2628	0.547 (92)	0.649 (4)	0.479 (16)	0.575 (7)	0.484 (10)		2020-02-29 16:30:17.542191+00:00	answer.zip	False
+Unique	xc2628	0.537 (106)	0.514 (9)	0.729 (4)	0.325 (17)	0.581 (7)		2020-03-12 12:44:13.927982+00:00	answer.zip	False
+University College Dublin 	nulty	0.521 (119)	0.622 (5)	0.500 (15)	0.350 (16)	0.613 (6)	res_weight_inv	2020-03-11 22:58:53.302670+00:00	answer.zip	True
+University College Dublin 	nulty	0.499 (139)	0.595 (6)	0.542 (13)	0.375 (15)	0.484 (10)		2020-03-11 22:46:13.442000+00:00	answer.zip	False
+University College Dublin 	nulty	0.468 (151)	0.297 (15)	0.604 (10)	0.325 (17)	0.645 (5)	pairwise_average_clustering_full_absolute	2020-03-11 21:54:57.137610+00:00	answer.zip	False
+University College Dublin 	nulty	0.468 (151)	0.297 (15)	0.604 (10)	0.325 (17)	0.645 (5)	pairwise average clustering full absolute	2020-03-11 21:54:02.360187+00:00	answer.zip	False
+University College Dublin 	nulty	0.425 (163)	0.405 (13)	0.417 (19)	0.425 (13)	0.452 (11)	check_1_pw_ac	2020-03-11 20:47:12.305984+00:00	answer.zip	False
+UvA Anonymous	kztodorov	0.576 (60)	0.568 (7)	0.604 (10)	0.550 (8)	0.581 (7)	v5 - median threshold	2020-03-11 20:57:40.566926+00:00	answer.zip	False
+UvA Anonymous	kztodorov	0.570 (68)	0.514 (9)	0.583 (11)	0.475 (11)	0.710 (3)	v1	2020-03-06 10:48:50.019918+00:00	answer.zip	False
+UvA Anonymous	kztodorov	0.562 (73)	0.514 (9)	0.604 (10)	0.550 (8)	0.581 (7)	v9 - old english - median	2020-03-12 11:31:04.268714+00:00	answer.zip	True
+UvA Anonymous	kztodorov	0.556 (80)	0.541 (8)	0.562 (12)	0.475 (11)	0.645 (5)	v3 - updated english	2020-03-11 20:46:08.501482+00:00	answer.zip	False
+UvA Anonymous	kztodorov	0.549 (89)	0.514 (9)	0.562 (12)	0.475 (11)	0.645 (5)	v2 - updated german+swedish	2020-03-11 19:05:36.573212+00:00	answer.zip	False
+UvA Anonymous	kztodorov	0.542 (100)	0.514 (9)	0.604 (10)	0.500 (10)	0.548 (8)	v4 - mean threshold	2020-03-11 20:53:21.717417+00:00	answer.zip	False
+UvA Anonymous	kztodorov	0.535 (108)	0.486 (10)	0.604 (10)	0.500 (10)	0.548 (8)	v8 - old english mean	2020-03-12 11:26:57.641362+00:00	answer.zip	False
+UvA Anonymous	kztodorov	0.527 (114)	0.514 (9)	0.562 (12)	0.450 (12)	0.581 (7)	v7 - reverted english	2020-03-11 22:31:28.515758+00:00	answer.zip	False
+UvA Anonymous	kztodorov	0.513 (125)	0.459 (11)	0.562 (12)	0.450 (12)	0.581 (7)	v6 - added cosine distance	2020-03-11 22:15:35.521700+00:00	answer.zip	False
+UWB	pribanp	0.687 (1)	0.622 (5)	0.750 (3)	0.700 (2)	0.677 (4)	v4	2020-03-11 13:11:46.784055+00:00	UWB_default_reveresed_binary_threshold.zip	False
+UWB	pribanp	0.663 (6)	0.595 (6)	0.812 (1)	0.600 (6)	0.645 (5)	v3	2020-03-11 13:11:23.316716+00:00	UWB_default_binary_threshold.zip	False
+UWB	pribanp	0.659 (11)	0.568 (7)	0.750 (3)	0.675 (3)	0.645 (5)	v9	2020-03-11 13:15:07.800375+00:00	map-unsup.zip	False
+UWB	pribanp	0.655 (13)	0.622 (5)	0.646 (8)	0.675 (3)	0.677 (4)	v10	2020-03-11 13:16:00.446253+00:00	map-unsup-globalThreshold.zip	False
+UWB	pribanp	0.639 (16)	0.622 (5)	0.688 (6)	0.600 (6)	0.645 (5)	v8	2020-03-11 13:14:41.137320+00:00	map-ort-i-globalThreshold.zip	False
+UWB	pribanp	0.634 (21)	0.568 (7)	0.750 (3)	0.575 (7)	0.645 (5)	v7	2020-03-11 13:13:56.828933+00:00	map-ort-i.zip	False
+UWB	pribanp	0.607 (28)	0.730 (1)	0.542 (13)	0.575 (7)	0.581 (7)	v2	2020-03-11 13:10:28.530826+00:00	UWB_default_reversed.zip	False
+UWB	pribanp	0.572 (65)	0.595 (6)	0.521 (14)	0.625 (5)	0.548 (8)	v1	2020-03-11 13:09:48.210824+00:00	UWB_default.zip	True
+UWB	pribanp	0.541 (102)	0.595 (6)	0.521 (14)	0.500 (10)	0.548 (8)	v6	2020-03-11 13:13:30.325584+00:00	LDA-100-globalThreshold.zip	False
+UWB	pribanp	0.506 (134)	0.459 (11)	0.458 (17)	0.525 (9)	0.581 (7)	v5	2020-03-11 13:12:48.522392+00:00	LDA-100.zip	False
+Vani Kanjirangat 	Vani	0.637 (19)	0.622 (5)	0.625 (9)	0.625 (5)	0.677 (4)	v.1	2020-03-11 22:53:50.458879+00:00	answer.zip	False
+Vani Kanjirangat 	Vani	0.591 (44)	0.541 (8)	0.708 (5)	0.375 (15)	0.742 (2)	v1	2020-03-11 20:21:28.555279+00:00	answer.zip	False
+Vani Kanjirangat 	Vani	0.583 (53)	0.541 (8)	0.708 (5)	0.375 (15)	0.710 (3)	v.3	2020-03-11 22:54:28.287354+00:00	answer.zip	True
+	semeval2020_baseline2_ct_ci_cd	0.613 (25)	0.595 (6)	0.688 (6)	0.525 (9)	0.645 (5)	semeval2020_baseline2_cnt_ci_cd	2020-03-09 22:19:24.068809+00:00	answer_cnt_ci_cd.zip	True
+	semeval2020_baseline3_majorit	0.576 (59)	0.568 (7)	0.646 (8)	0.350 (16)	0.742 (2)	semeval2020_baseline3_majority	2020-03-09 22:46:01.340781+00:00	majority.zip	True
+	semeval2020_baseline1_fd	0.439 (159)	0.432 (12)	0.417 (19)	0.650 (4)	0.258 (17)	semeval2020_baseline1_fd	2020-03-09 22:08:20.268856+00:00	answer_fd.zip	True
+										
+										
+Subtask 2: Ranking										
+										
+Team	User	All	English	German	Latin	Swedish	Description	Date	Filename	Is on leaderboard?
+		SPR	SPR	SPR	SPR	SPR				
+#hitsters	lucas.rettenmeier	0.187 (73)	0.187 (61)	0.267 (61)	-0.015 (94)	0.309 (26)	pip_word2vec	2020-03-09 18:30:45.900359+00:00	answer.zip	False
+#hitsters	lucas.rettenmeier	0.165 (81)	0.082 (80)	0.356 (49)	-0.056 (100)	0.277 (29)	mixed_fasttext_glove_word2vec	2020-03-09 18:35:57.948944+00:00	answer.zip	False
+#hitsters	lucas.rettenmeier	0.125 (88)	0.071 (82)	0.273 (60)	-0.000 (91)	0.155 (44)	mixed_fasttext	2020-03-09 18:36:10.709303+00:00	answer.zip	True
+#hitsters	lucas.rettenmeier	0.090 (95)	0.014 (92)	0.256 (63)	-0.038 (99)	0.130 (55)	pip_fasttext_glove_word2vec	2020-03-09 18:31:20.999939+00:00	answer.zip	False
+#hitsters	lucas.rettenmeier	0.083 (102)	-0.133 (107)	0.241 (66)	0.004 (89)	0.220 (35)	pip_fasttext	2020-03-09 15:00:12.009208+00:00	answer.zip	False
+#hitsters	lucas.rettenmeier	-0.009 (124)	-0.171 (112)	0.053 (95)	0.149 (69)	-0.068 (95)	mixed_glove	2020-03-09 18:35:45.181428+00:00	answer.zip	False
+#hitsters	lucas.rettenmeier	-0.097 (130)	-0.204 (116)	-0.092 (110)	0.013 (87)	-0.106 (99)	pip_glove	2020-03-09 18:31:04.201951+00:00	answer.zip	False
+#hitsters	lucas.rettenmeier	-0.381 (132)	-0.375 (124)	-0.499 (113)	-0.218 (110)	-0.431 (106)	trafo_fasttext	2020-03-09 18:32:22.101680+00:00	answer.zip	False
+#hitsters	lucas.rettenmeier	-0.439 (135)	-0.464 (125)	-0.586 (116)	-0.200 (109)	-0.507 (108)	trafo_fasttext_glove_word2vec	2020-03-09 18:32:45.781275+00:00	answer.zip	False
+ASV	aniekler	0.031 (113)	-0.079 (103)	0.124 (88)	-0.005 (92)	0.083 (62)	First run with standard parameters. TEAM SUBMISSION	2020-03-10 10:22:02.573826+00:00	answer.zip	True
+ASV	aniekler	0.031 (113)	-0.079 (103)	0.124 (88)	-0.005 (92)	0.083 (62)	First run with standard parameters.	2020-02-28 07:36:46.411556+00:00	answer.zip	False
+cbk	cbk	0.234 (55)	0.059 (85)	0.400 (46)	0.341 (36)	0.136 (51)	v1	2020-03-06 12:16:22.049120+00:00	answer.zip	True
+cbk	cbk	0.234 (55)	0.059 (85)	0.400 (46)	0.341 (36)	0.136 (51)	v1	2020-03-06 12:10:34.211182+00:00	answer.zip	False
+cs2020	DeadBread	0.053 (105)	-0.185 (114)	0.041 (97)	0.262 (53)	0.094 (61)	v.3	2020-03-13 04:52:53.384157+00:00	answer.zip	True
+cs2020	DeadBread	0.044 (109)	-0.134 (108)	0.025 (99)	0.207 (61)	0.079 (63)	v.2 	2020-03-13 04:48:12.085485+00:00	answer.zip	False
+cs2020	DeadBread	0.011 (122)	-0.218 (118)	-0.040 (105)	0.207 (61)	0.094 (61)	first	2020-03-13 04:40:42.448620+00:00	answer.zip	False
+cs2021	dovvakkin	0.503 (3)	0.375 (9)	0.702 (5)	0.399 (22)	0.536 (7)		2020-03-11 23:06:36.975595+00:00	answer.zip	True
+DCC	fdzr	-0.083 (128)	-0.217 (117)	0.014 (100)	0.020 (85)	-0.150 (100)	version_1 answer	2020-03-10 13:56:11.464355+00:00	answer.zip	False
+DCC	fdzr	-0.430 (134)	-0.311 (120)	-0.565 (114)	-0.343 (112)	-0.504 (107)	v2	2020-03-11 22:48:48.456288+00:00	answer.zip	True
+Discovery Team	elainezosa	0.442 (9)	0.361 (16)	0.603 (18)	0.460 (10)	0.343 (20)	fine-tuned, aff-prop concat, radically filter NE + filter POS + remove small clusters + w2v ensembling	2020-03-11 18:45:22.472442+00:00	answer.zip	False
+Discovery Team	elainezosa	0.417 (12)	0.357 (17)	0.642 (16)	0.366 (28)	0.303 (27)	word2vec embeddings with hamilton alignment + aff prop (ensembling)	2020-03-11 17:44:56.917356+00:00	answer.zip	False
+Discovery Team	SyrielleM	0.397 (16)	0.315 (22)	0.565 (19)	0.496 (2)	0.212 (36)	Submission 6: Task1_affprop-finetuned-dynamic-empty-clusters_Task2_avg-finetuned-concat	2020-03-11 16:51:39.369658+00:00	answer.zip	False
+Discovery Team	SyrielleM	0.384 (17)	0.328 (20)	0.534 (23)	0.513 (1)	0.161 (42)	Submission 7: Task1_stopwords-ensemble-avg-affprop_Task2_ensemble-affprop-avg	2020-03-11 17:38:16.327743+00:00	answer.zip	False
+Discovery Team	SyrielleM	0.302 (33)	0.278 (34)	0.452 (37)	0.421 (16)	0.059 (71)	Submission 4: Task1_affprop-merging-empty-clusters_Task2_affprop-merging	2020-03-12 17:27:06.542576+00:00	answer.zip	True
+Discovery Team 	lampa112	0.298 (34)	0.313 (23)	0.436 (39)	0.467 (6)	-0.026 (89)	"fine_tuned_concat_aff_prop_stop_words
+
+thresholds = {'english': 0.3,
+              'german': 0.43,
+              'latin': 0.4,
+              'swedish':0.4
+              }"	2020-03-10 09:56:02.028928+00:00	answer.zip	False
+Discovery Team 	lampa112	0.291 (36)	0.413 (6)	0.310 (57)	0.472 (4)	-0.029 (90)	"fine_tuned_concat_aff_prop_radically_filtered_stop_words_high
+thresholds = {'english': 0.245,
+              'german': 0.382,
+              'latin': 0.316,
+              'swedish': 0.427
+              }
+
+"	2020-03-11 16:12:32.235046+00:00	answer.zip	False
+Discovery Team 	matejm	0.324 (28)	0.236 (46)	0.552 (21)	0.358 (31)	0.149 (47)	config 8	2020-03-11 18:16:42.790155+00:00	answer_config_8.zip	False
+Discovery Team 	matejm	0.313 (32)	0.244 (45)	0.424 (41)	0.416 (19)	0.168 (40)	config 2	2020-03-11 18:00:50.872844+00:00	answer_config_2.zip	False
+Discovery Team 	matejm	0.278 (41)	0.216 (50)	0.488 (30)	0.481 (3)	-0.072 (96)	config 3	2020-03-11 14:52:58.289406+00:00	answer_config_3.zip	False
+ECNUCS	Qing	0.413 (13)	-0.032 (98)	0.677 (12)	0.469 (5)	0.539 (6)		2020-03-12 14:49:33.908123+00:00	answer_wordnet-en.zip	True
+ECNUCS	Qing	0.400 (15)	-0.086 (104)	0.677 (12)	0.469 (5)	0.539 (6)	skip-gram windowsize 5 dim 300 with  Orthogonal Procrustes. threshold 0.3 0.4 0.45 0.5 for task1	2020-03-12 14:36:12.781267+00:00	answer.zip	False
+ECNUCS	Qing	0.400 (15)	-0.086 (104)	0.677 (12)	0.469 (5)	0.539 (6)	skip-gram windowsize 5 dim 300 with  Orthogonal Procrustes. threshold 0.35 for task1	2020-03-12 13:10:11.522709+00:00	answer.zip	False
+ECNUCS	Qing	0.261 (47)	0.214 (51)	0.497 (29)	0.346 (35)	-0.012 (84)	use multilingual bert to get rep for each word, then use kmeans on c1+c2 to get clusters,  compute cosine distance of distribution1 between distribution2.   In the submission, k=7, threshold for task1 t=0.5	2020-03-12 05:01:24.595461+00:00	answer_7means_t0.5.zip	False
+ECNUCS	Qing	0.243 (53)	0.192 (59)	0.321 (54)	0.334 (37)	0.125 (57)	use multilingual bert to get rep for each word, then use kmeans on c1+c2 to get clusters,  compute cosine distance of distribution1 between distribution2.   In the submission, k=5, threshold for task1 t=0.5	2020-03-12 13:14:59.042874+00:00	answer_5means_t0.5.zip	False
+ECNUCS	Qing	0.212 (64)	0.132 (73)	0.459 (36)	0.276 (52)	-0.018 (86)		2020-03-12 14:37:55.313316+00:00	answer_7means_t0.4.zip	False
+ECNUCS	Qing	0.045 (108)	0.087 (78)	0.144 (85)	-0.095 (103)	0.045 (72)	use multilingual bert to get rep of the sentence with target word, then use kmeans on c1+c2 to get clusters,  compute cosine distance of distribution1 between distribution2.   In the submission, k=3, threshold for task1 t=0.35	2020-03-12 13:58:20.078094+00:00	answer_3means_t0.35_sen.zip	False
+Eleri Sarsfield 	elerisarsfield	0.100 (91)	0.105 (75)	0.220 (72)	-0.024 (96)	0.102 (60)		2020-03-11 22:40:43.958637+00:00	answer.zip	False
+Eleri Sarsfield 	elerisarsfield	0.048 (106)	-0.105 (105)	0.220 (72)	-0.024 (96)	0.102 (60)		2020-03-12 19:31:17.348306+00:00	answer.zip	True
+Entity	vaibhav29498	0.352 (24)	0.250 (43)	0.499 (28)	0.303 (45)	0.357 (18)	GloVe + VI (Emb size:50, Window:10, Iterations:60)	2020-03-08 17:26:18.041050+00:00	answer.zip	True
+Entity	vaibhav29498	0.200 (66)	0.143 (70)	0.307 (58)	0.281 (49)	0.067 (69)	GloVe + VI	2020-02-22 23:48:11.565866+00:00	answer.zip	False
+in vain	jenskaiser	0.372 (19)	0.301 (28)	0.659 (13)	0.098 (78)	0.432 (13)	"win10-k5-t0.001-dim5-ep50
+task1 LND &gt;= mean
+task2 CD"	2020-03-08 22:31:54.550143+00:00	answer.zip	False
+in vain	jenskaiser	0.361 (23)	0.304 (27)	0.677 (11)	0.304 (44)	0.160 (43)	"win10-k5-tNone-dim8-ep30
+task1 LND &gt;= mean
+task2 CD"	2020-03-09 16:01:00.080309+00:00	answer.zip	True
+in vain	jenskaiser	0.337 (26)	0.259 (39)	0.564 (20)	0.127 (73)	0.398 (15)	"win10-k5-tNone-dim5-ep30
+task1 LND &gt;= mean
+task2 CD"	2020-03-08 10:52:41.200310+00:00	answer.zip	False
+Interesting Linguistic Lexical Change	hubbsa	0.193 (70)	0.337 (19)	-0.066 (108)	0.287 (47)	0.212 (36)	"Submission 7: ensemble model of submission 2, 5 and 6.
+The score is the average of the 3 KL divergences, the class is the median of the three class labels (majority vote). "	2020-03-12 14:46:53.876941+00:00	submission7_majorityvote.zip	True
+Interesting Linguistic Lexical Change	hubbsa	0.174 (79)	0.232 (47)	-0.062 (107)	0.281 (50)	0.244 (32)	"Submission 5: 
+I use the same model as in submission 2, but estimate 4 senses per word (instead of 3). 
+
+Another difference is that I changed the preprocessing for German: &quot;d&quot; has been added to the stopwords and is removed from the corpus. "	2020-03-12 14:44:53.465267+00:00	submission5_scanmodel_4senses.zip	False
+Interesting Linguistic Lexical Change	hubbsa	0.144 (85)	0.022 (90)	0.216 (74)	0.359 (30)	-0.022 (88)	Out of curiosity I am also submitting the count vector baseline. Class threshold is determined by taking the median. 	2020-03-11 21:06:06.600638+00:00	submission4_countvectors.zip	False
+Interesting Linguistic Lexical Change	hubbsa	0.133 (87)	0.206 (57)	-0.142 (111)	0.262 (54)	0.207 (37)	"Submission 6: 
+same as submission 5, but the model estimates 5 senses (instead of 4). "	2020-03-12 14:45:44.173242+00:00	submission6_scanmodel_5senses.zip	False
+Interesting Linguistic Lexical Change	hubbsa	0.099 (92)	0.225 (49)	0.152 (84)	0.015 (86)	0.005 (80)	This submission applies the scan model by Lea Frermann using a window of 5 words and estimating 3 senses for every word. The degree of change is measured by the KL divergence over the sense probability distributions. The threshold for determining classes is the median. The English, German and Swedish corpus has been preprocessed by removing stopwords using nltk stopwords, the Latin corpus has not been preprocessed. 	2020-03-11 21:00:53.904256+00:00	submission2_scanmodel.zip	False
+Interesting Linguistic Lexical Change	hubbsa	0.039 (110)	-0.269 (119)	-0.001 (102)	0.423 (15)	0.002 (81)	"Dummy method based on number of sentences in which a target occurs. Just used for testing.
+
+Score = abs(len(t2_sents)-len(t1_sents)) /  (len(t1_sents) +len(t2_sents))
+
+Threshold for classes is determined by taking the median. "	2020-03-05 10:18:23.036535+00:00	submission1_naive_sentencelength_method.zip	False
+Interesting Linguistic Lexical Change	hubbsa	-0.083 (128)	-0.217 (117)	0.014 (100)	0.020 (85)	-0.150 (100)	Out of curiosity I am also submitting the frequency baseline. Class threshold is determined by taking the median. 	2020-03-11 21:05:16.242002+00:00	submission3_frequencybaseline.zip	False
+J.U.S.T	Hemam	0.089 (96)	0.057 (86)	0.220 (72)	-0.024 (96)	0.102 (60)		2020-03-11 23:31:09.306386+00:00	answer.zip	False
+J.U.S.T	Hemam	0.029 (114)	-0.182 (113)	0.220 (72)	-0.024 (96)	0.102 (60)	English only with Jensen-Shannon distance 	2020-02-28 14:55:01.566709+00:00	answer.zip	False
+J.U.S.T	Hemam	0.018 (119)	-0.182 (113)	0.220 (72)	-0.069 (101)	0.102 (60)		2020-03-11 00:09:06.651658+00:00	answer.zip	False
+J.U.S.T	Hemam	0.018 (119)	-0.182 (113)	0.220 (72)	-0.069 (101)	0.102 (60)	Eng+Lat	2020-03-11 00:02:40.862850+00:00	answer.zip	False
+J.U.S.T	Hemam	-0.198 (131)	-0.327 (122)	-0.087 (109)	-0.069 (101)	-0.311 (104)	"Approach 2 ""Final"""	2020-03-12 00:11:34.702018+00:00	answer.zip	True
+J.U.S.T	Hemam	-0.198 (131)	-0.327 (122)	-0.087 (109)	-0.069 (101)	-0.311 (104)		2020-03-12 00:03:31.188722+00:00	answer.zip	False
+J.U.S.T	Hemam	-0.198 (131)	-0.327 (122)	-0.087 (109)	-0.069 (101)	-0.311 (104)	Approach1_final	2020-03-11 23:58:19.170575+00:00	answer.zip	False
+JCT	Eamar	0.254 (48)	0.014 (91)	0.506 (27)	0.419 (17)	0.078 (65)	v6-freq20-dim300-per50-cert50	2020-03-11 17:16:31.914506+00:00	v6-freq20-dim300-per50-cert50.zip	False
+JCT	Eamar	0.252 (50)	0.209 (54)	0.353 (50)	0.370 (27)	0.074 (66)	v10-freq20-dim300-per60-cert40	2020-03-11 17:46:18.585071+00:00	v10-freq20-dim300-per60-cert40.zip	True
+JCT	Eamar	0.252 (50)	0.209 (54)	0.353 (50)	0.370 (27)	0.074 (66)	v5-freq20-dim300-per60-cert50	2020-03-11 17:15:42.611729+00:00	v5-freq20-dim300-per60-cert50.zip	False
+JCT	Eamar	0.216 (62)	0.146 (68)	0.244 (64)	0.434 (14)	0.040 (74)	v9-freq20-dim300-per70-cert40	2020-03-11 17:40:48.693472+00:00	v9-freq20-dim300-per70-cert40.zip	False
+JCT	Eamar	0.216 (62)	0.146 (68)	0.244 (64)	0.434 (14)	0.040 (74)	v4-freq20-dim300-per70-cert50	2020-03-11 17:14:50.643457+00:00	v4-freq20-dim300-per70-cert50.zip	False
+JCT	Eamar	0.158 (82)	0.039 (88)	0.234 (68)	0.319 (39)	0.039 (75)	v8-freq20-dim300-per80-cert40	2020-03-11 17:31:31.694469+00:00	v8-freq20-dim300-per80-cert40.zip	False
+JCT	Eamar	0.158 (82)	0.039 (88)	0.234 (68)	0.319 (39)	0.039 (75)	v3-freq20-dim300-per80-cert50	2020-03-11 17:14:00.860264+00:00	v3-freq20-dim300-per80-cert50.zip	False
+JCT	Eamar	0.140 (86)	0.014 (93)	0.189 (78)	0.282 (48)	0.074 (66)	v7-freq20-dim300-per90-cert40	2020-03-11 17:20:24.473617+00:00	v7-freq20-dim300-per90-cert40.zip	False
+JCT	Eamar	0.140 (86)	0.014 (93)	0.189 (78)	0.282 (48)	0.074 (66)	v2-freq20-dim300-per90-cert50	2020-03-11 17:13:15.008985+00:00	v2-freq20-dim300-per90-cert50.zip	False
+JCT	Eamar	0.012 (121)	-0.203 (115)	0.174 (82)	0.130 (72)	-0.053 (93)	v1-freq20-dim300-per90-cert50  with 90 hard coded	2020-03-08 11:17:25.786561+00:00	v1-freq20-dim300-per90-cert50.zip	False
+K.L	kamel	0.089 (96)	0.057 (86)	0.220 (72)	-0.024 (96)	0.102 (60)		2020-03-11 23:03:41.283655+00:00	answer.zip	True
+K.L	kamel	0.089 (96)	0.057 (86)	0.220 (72)	-0.024 (96)	0.102 (60)		2020-02-28 14:19:58.919608+00:00	answer.zip	False
+K.L	kamel	0.089 (96)	0.057 (86)	0.220 (72)	-0.024 (96)	0.102 (60)		2020-02-24 11:25:42.150076+00:00	answer.zip	False
+learner	snoopy	0.318 (30)	0.363 (14)	0.645 (15)	0.228 (59)	0.034 (76)		2020-03-12 17:10:52.024150+00:00	answer.zip	False
+learner	snoopy	0.276 (42)	0.268 (36)	0.527 (24)	0.148 (70)	0.162 (41)		2020-03-12 17:10:12.230089+00:00	answer.zip	False
+learner	snoopy	0.253 (49)	0.175 (63)	0.527 (24)	0.148 (70)	0.162 (41)		2020-03-12 17:10:26.167196+00:00	answer.zip	False
+learner	snoopy	0.025 (115)	0.211 (53)	0.183 (80)	-0.427 (114)	0.131 (54)		2020-03-12 17:48:51.096843+00:00	answer.zip	True
+Life-Language	ehsaneddin	0.218 (60)	0.299 (29)	0.208 (76)	-0.024 (95)	0.391 (16)	language model based domain shift analysis, no thrshld modification 	2020-03-11 12:46:05.884870+00:00	answer_5.zip	False
+Life-Language	ehsaneddin	0.218 (60)	0.299 (29)	0.208 (76)	-0.024 (95)	0.391 (16)	language model based domain shift analysis, thrshld for English is modifed.	2020-03-11 12:43:02.850589+00:00	answer_4.zip	False
+Life-Language	ehsaneddin	0.218 (60)	0.299 (29)	0.208 (76)	-0.024 (95)	0.391 (16)		2020-03-11 12:38:55.998106+00:00	answer_3.zip	False
+Life-Language	ehsaneddin	0.218 (60)	0.299 (29)	0.208 (76)	-0.024 (95)	0.391 (16)	language model based domain shift analysis, thrshld for Latin is modifed.	2020-03-11 12:30:24.119992+00:00	answer_2.zip	False
+Life-Language	ehsaneddin	0.218 (60)	0.299 (29)	0.208 (76)	-0.024 (95)	0.391 (16)	language model based domain shift analysis, thrshld for German is modifed.	2020-03-11 12:24:46.989701+00:00	answer.zip	False
+Life-Language	ehsaneddin	0.218 (60)	0.299 (29)	0.208 (76)	-0.024 (95)	0.391 (16)		2020-03-11 12:23:53.239854+00:00	answer.zip	False
+Life-Language	ehsaneddin	0.218 (60)	0.299 (29)	0.208 (76)	-0.024 (95)	0.391 (16)		2020-03-11 08:44:49.217258+00:00	answer.zip	False
+Life-Language	ehsaneddin	0.218 (60)	0.299 (29)	0.208 (76)	-0.024 (95)	0.391 (16)		2020-03-10 21:34:23.732143+00:00	answer.zip	False
+Life-Language	ehsaneddin	0.218 (60)	0.299 (29)	0.208 (76)	-0.024 (95)	0.391 (16)		2020-03-10 21:34:13.314848+00:00	answer.zip	False
+Life-Language	ehsaneddin	0.190 (72)	0.168 (64)	0.208 (76)	-0.007 (93)	0.391 (16)	language model based domain shift analysis, bootstrapped	2020-03-12 22:32:45.957620+00:00	answer_final.zip	True
+LYNX	jinan	0.517 (2)	0.325 (21)	0.717 (3)	0.440 (13)	0.588 (2)	answer_sgns_tr_iter5_q50	2020-03-11 15:02:44.555365+00:00	answer_sgns_tr_iter5_q50.zip	False
+LYNX	jinan	0.499 (4)	0.295 (31)	0.735 (1)	0.388 (23)	0.579 (4)	answer_sgns_tr_win5_q22	2020-03-11 15:18:41.866818+00:00	answer_sgns_tr_win5_q22.zip	True
+LYNX	jinan	0.499 (4)	0.295 (31)	0.735 (1)	0.388 (23)	0.579 (4)	answer_sgns_tr_win5_q20	2020-03-11 15:09:18.062398+00:00	answer_sgns_tr_win5_q20.zip	False
+LYNX	jinan	0.499 (4)	0.295 (31)	0.735 (1)	0.388 (23)	0.579 (4)	answer_sgns_tr_win5_q25	2020-03-10 17:22:31.341721+00:00	answer_sgns_tr_win5_q25.zip	False
+LYNX	jinan	0.430 (10)	0.250 (41)	0.686 (10)	0.355 (33)	0.428 (14)	answer_sgns_tr_win10_q20	2020-03-10 17:24:05.756003+00:00	answer_sgns_tr_win10_q20.zip	False
+LYNX	jinan	0.430 (10)	0.250 (41)	0.686 (10)	0.355 (33)	0.428 (14)	answer_sgns_tr_win10_q25	2020-03-10 17:23:38.262247+00:00	answer_sgns_tr_win10_q25.zip	False
+M'kay	Emkay	0.316 (31)	0.061 (84)	0.538 (22)	0.332 (38)	0.331 (23)	w2v, cca, cosine , a median threshold and almost no clue what  I am doing here 	2020-02-23 16:43:18.175326+00:00	answer.zip	True
+NLPCR	DavidRother	0.287 (37)	0.436 (3)	0.446 (38)	0.151 (68)	0.114 (59)	BERT Embeddings AutoEncoded mapped with Umap and sense clustered with HDBSCAN	2020-03-11 11:12:35.955690+00:00	answer.zip	False
+NLPCR	DavidRother	0.281 (40)	0.389 (7)	0.469 (33)	0.112 (74)	0.153 (46)	BERT Embeddings AutoEncoded mapped with Umap and sense clustered with HDBSCAN	2020-03-11 10:46:05.078708+00:00	answer.zip	False
+NLPCR	DavidRother	0.274 (44)	0.365 (13)	0.404 (45)	0.194 (63)	0.132 (53)		2020-03-11 13:30:11.079290+00:00	answer.zip	True
+NLPCR	DavidRother	0.269 (46)	0.440 (2)	0.412 (44)	0.109 (75)	0.114 (59)	BERT Embeddings AutoEncoded mapped with Umap and sense clustered with HDBSCAN	2020-03-11 11:34:08.076088+00:00	answer.zip	False
+NLPCR	DavidRother	0.223 (59)	0.422 (4)	0.229 (69)	0.103 (76)	0.138 (50)	BERT Embeddings AutoEncoded mapped with Umap and sense clustered with HDBSCAN	2020-03-11 10:57:31.670709+00:00	answer.zip	False
+NLPCR	DavidRother	0.215 (63)	0.369 (10)	0.321 (55)	0.101 (77)	0.068 (68)	BERT Embeddings AutoEncoded mapped with Umap and sense clustered with HDBSCAN	2020-03-11 00:41:10.989078+00:00	answer.zip	False
+NLPCR	DavidRother	0.190 (71)	0.304 (26)	0.300 (59)	0.093 (80)	0.065 (70)	BERT Embeddings AutoEncoded mapped with Umap and sense clustered with HDBSCAN	2020-03-11 00:53:39.825064+00:00	answer.zip	False
+NLPCR	DavidRother	0.178 (77)	0.385 (8)	0.237 (67)	-0.036 (98)	0.126 (56)	BERT Embeddings AutoEncoded mapped with Umap and sense clustered with HDBSCAN	2020-03-11 00:28:57.986932+00:00	answer.zip	False
+NLPCR	DavidRother	0.104 (90)	0.308 (24)	0.225 (71)	-0.097 (104)	-0.022 (87)	BERT Embeddings AutoEncoded mapped with Umap and sense clustered with HDBSCAN #1	2020-03-10 18:37:10.290691+00:00	answer.zip	False
+NLPCR	DavidRother	0.087 (97)	-0.060 (100)	0.341 (51)	-0.071 (102)	0.139 (49)	BERT Embeddings mapped with Umap and sense clustered with HDBSCAN #1	2020-03-09 18:21:47.612134+00:00	answer.zip	False
+NO-center 	sqr_hussain	NaN (123)	NaN (95)	0.211 (75)	0.031 (83)	NaN (83)		2020-03-13 04:56:02.759086+00:00	answer.zip	True
+Random 	p.cassotti	0.296 (35)	0.211 (52)	0.337 (52)	0.253 (56)	0.385 (17)	tri	2020-03-05 09:55:17.465577+00:00	answer_tri.zip	False
+Random 	p.cassotti	0.273 (45)	0.144 (69)	0.415 (43)	0.194 (62)	0.340 (22)	coll	2020-03-05 09:55:33.245754+00:00	answers_coll.zip	False
+Random 	p.cassotti	0.248 (51)	0.099 (76)	0.135 (86)	0.310 (41)	0.449 (12)	tri positional	2020-03-11 19:31:20.514283+00:00	answer_positional.zip	True
+Random 	p.cassotti	0.111 (89)	0.252 (40)	0.415 (43)	-0.183 (108)	-0.041 (92)	overall	2020-03-05 09:55:04.641946+00:00	answer_overall.zip	False
+Random 	p.cassotti	0.111 (89)	0.252 (40)	0.415 (43)	-0.183 (108)	-0.041 (92)	BUG-best score	2020-03-04 10:06:10.897035+00:00	answer.zip	False
+Random 	p.cassotti	0.098 (93)	0.252 (40)	0.366 (48)	-0.183 (108)	-0.041 (92)	ppmi	2020-03-05 09:55:26.244262+00:00	answer_ppmi.zip	False
+Random 	p.cassotti	0.098 (93)	0.252 (40)	0.366 (48)	-0.183 (108)	-0.041 (92)	BUG-best score ppmi	2020-03-05 09:34:58.953889+00:00	answer.zip	False
+Random 	p.cassotti	0.056 (103)	0.272 (35)	0.168 (83)	-0.135 (105)	-0.080 (97)	overall (computed only on gm score) - pearson - NO COLLOCATION	2020-03-06 15:14:59.494027+00:00	answer_overall_pearson.zip	False
+Random 	p.cassotti	0.035 (112)	0.298 (30)	-0.059 (106)	-0.179 (107)	0.078 (64)	overall (computed only on gm score) - nbrs	2020-03-06 15:05:03.182539+00:00	answer_overall_nbrs.zip	False
+RIJP	RanIwamoto	0.087 (99)	0.157 (66)	0.099 (92)	0.065 (82)	0.028 (77)	neugauss 1.1	2020-03-10 09:56:10.475302+00:00	answer_gauss.zip	True
+RIJP	RanIwamoto	0.087 (99)	0.157 (66)	0.099 (92)	0.065 (82)	0.028 (77)	neugauss 1	2020-03-10 09:52:54.668868+00:00	answer_gauss.zip	False
+RIJP	RanIwamoto	0.087 (99)	0.157 (66)	0.099 (92)	0.065 (82)	0.028 (77)	neugauss 0.9	2020-03-10 09:51:59.852315+00:00	answer_gauss.zip	False
+RIJP	RanIwamoto	0.087 (99)	0.157 (66)	0.099 (92)	0.065 (82)	0.028 (77)	neugauss 0.8	2020-03-10 09:50:26.206306+00:00	answer_gauss.zip	False
+RIJP	RanIwamoto	0.087 (99)	0.157 (66)	0.099 (92)	0.065 (82)	0.028 (77)	neugauss 0.7	2020-03-10 09:44:55.607150+00:00	answer_gauss.zip	False
+RIJP	RanIwamoto	0.055 (104)	0.083 (79)	-0.005 (103)	0.012 (88)	0.133 (52)	gauss 0.6	2020-03-10 09:36:56.245744+00:00	answer_gauss.zip	False
+RIJP	RanIwamoto	0.055 (104)	0.083 (79)	-0.005 (103)	0.012 (88)	0.133 (52)	gauss 0.5	2020-03-10 09:33:42.985216+00:00	answer_gauss.zip	False
+RIJP	RanIwamoto	0.055 (104)	0.083 (79)	-0.005 (103)	0.012 (88)	0.133 (52)	gauss 0.4	2020-03-10 09:29:00.457154+00:00	answer_gauss.zip	False
+RIJP	RanIwamoto	-0.087 (129)	-0.070 (101)	0.047 (96)	-0.396 (113)	0.069 (67)		2020-03-03 15:08:13.549671+00:00	answer_gauss.zip	False
+RIJP	RanIwamoto	-0.402 (133)	-0.358 (123)	-0.576 (115)	-0.336 (111)	-0.337 (105)		2020-03-03 12:55:58.869852+00:00	answer_word2vec.zip	False
+RPI-Trust 	mgruppi	0.427 (11)	0.228 (48)	0.520 (26)	0.462 (9)	0.498 (9)	"v5
+Using feature ensemble for classification + using aligned cosine for ranking"	2020-03-11 19:30:55.319274+00:00	answer_v5.zip	False
+RPI-Trust 	mgruppi	0.370 (20)	0.250 (42)	0.468 (34)	0.445 (11)	0.319 (25)	"v8
+Parameter tweaking"	2020-03-13 03:15:08.199746+00:00	answer_v8.zip	False
+RPI-Trust 	mgruppi	0.370 (20)	0.250 (42)	0.468 (34)	0.445 (11)	0.319 (25)	"v7
+Mean neighborhood change as a feature + adjust decision threshold"	2020-03-13 02:47:29.516293+00:00	answer_v7.zip	False
+RPI-Trust 	mgruppi	0.341 (25)	0.178 (62)	0.428 (40)	0.418 (18)	0.341 (21)	"v6
+Ensemble cosine+inverse_neighborhood+frequency_direction"	2020-03-12 05:25:27.327537+00:00	answer_v6.zip	False
+RPI-Trust 	mgruppi	0.326 (27)	0.055 (87)	0.473 (32)	0.317 (40)	0.457 (11)	"v4
+apply feature selection to the previous model to avoid noisy features"	2020-03-11 19:19:27.701528+00:00	answer_v4.zip	False
+RPI-Trust 	mgruppi	0.286 (38)	0.065 (83)	0.464 (35)	0.362 (29)	0.255 (31)	"v10
+Even higher threshold (0.8)"	2020-03-13 03:19:17.829641+00:00	answer_v10.zip	True
+RPI-Trust 	mgruppi	0.286 (38)	0.065 (83)	0.464 (35)	0.362 (29)	0.255 (31)	"v9
+All features, higher threshold"	2020-03-13 03:17:39.408740+00:00	answer_v9.zip	False
+RPI-Trust 	mgruppi	0.225 (58)	-0.007 (96)	0.476 (31)	0.192 (64)	0.239 (33)	"v3
+Add mean neighborhood distance to previous submission. Using word vectors and word frequency to predict change."	2020-03-10 00:01:25.699447+00:00	answer_mnd.zip	False
+RPI-Trust 	mgruppi	0.174 (78)	-0.136 (109)	0.420 (42)	0.221 (60)	0.191 (38)	"v2
+Using model ensemble to determine semantic change from word embedings (word2vec) and word frequency."	2020-03-09 22:48:42.012407+00:00	answer.zip	False
+RPI-Trust 	mgruppi	0.035 (111)	-0.165 (111)	0.126 (87)	0.466 (7)	-0.286 (103)	"v1
+Simple method with word embeddings and vector differences"	2020-03-08 20:46:47.496519+00:00	answer_diff.zip	False
+Schwäbischschwätza_tue	basagashka	0.087 (100)	-0.155 (110)	0.388 (47)	0.177 (67)	-0.062 (94)	v10	2020-03-11 21:23:30.959181+00:00	answer.zip	True
+Schwäbischschwätza_tue	basagashka	0.087 (100)	-0.155 (110)	0.388 (47)	0.177 (67)	-0.062 (94)	v9	2020-03-11 16:12:33.234502+00:00	answer.zip	False
+Schwäbischschwätza_tue	basagashka	0.086 (101)	-0.114 (106)	0.388 (47)	0.132 (71)	-0.062 (94)	v6	2020-03-11 16:08:39.572452+00:00	answer.zip	False
+Schwäbischschwätza_tue	basagashka	0.018 (118)	-0.468 (126)	0.327 (53)	0.374 (24)	-0.160 (101)	v1	2020-03-06 14:11:37.227177+00:00	answer.zip	False
+Schwäbischschwätza_tue	basagashka	-0.024 (125)	-0.155 (110)	0.056 (94)	0.177 (67)	-0.175 (102)	v7	2020-03-11 16:10:36.554924+00:00	answer.zip	False
+Schwäbischschwätza_tue	basagashka	-0.025 (126)	-0.114 (106)	0.056 (94)	0.132 (71)	-0.175 (102)	v8	2020-03-11 16:11:35.214409+00:00	answer.zip	False
+Schwäbischschwätza_tue 	piaschwarz	0.047 (107)	-0.155 (110)	0.388 (47)	0.132 (71)	-0.175 (102)	v3	2020-03-10 20:51:49.610393+00:00	answer.zip	False
+Schwäbischschwätza_tue 	piaschwarz	0.014 (120)	-0.114 (106)	0.056 (94)	0.177 (67)	-0.062 (94)	v2	2020-03-10 20:47:44.060898+00:00	answer.zip	False
+Skurt	Amaru	0.374 (18)	0.209 (56)	0.656 (14)	0.399 (21)	0.234 (34)	A simple model based on XLMR and KNN-clustering. 	2020-03-11 09:42:57.010594+00:00	results.zip	False
+Skurt	Amaru	0.238 (54)	0.361 (15)	0.118 (91)	0.281 (51)	0.190 (39)	"A model based on contextualized embeddings via XLMR.
+Task 1 is solved with a KNN clustering approach
+Task 2 is solved based on source classification error (less error ~ more change)"	2020-03-11 10:28:41.787551+00:00	results2.zip	True
+UG Student Intern 	mpoemsl	0.527 (1)	0.422 (4)	0.725 (2)	0.412 (20)	0.547 (5)	V3: SGNS only (word2vec, vecmap-op)	2020-03-09 14:23:58.220397+00:00	answer.zip	True
+UG Student Intern 	mpoemsl	0.495 (5)	0.246 (44)	0.725 (2)	0.463 (8)	0.547 (5)	V1: Weighted Ensemble (word2vec, vecmap-op, bert-base-multilingual-cased)	2020-03-05 18:52:56.087837+00:00	answer.zip	False
+UG Student Intern 	mpoemsl	0.194 (69)	0.082 (81)	0.208 (77)	0.444 (12)	0.042 (73)	V2: BERT only (bert-base-multilingual-cased)	2020-03-09 14:21:56.242499+00:00	answer.zip	False
+UiO-UVA	akutuzov	0.370 (21)	0.136 (72)	0.695 (8)	0.370 (26)	0.278 (28)	elmo_single_detect_1/2	2020-03-11 23:36:09.180968+00:00	elmo_single_top_detect.zip	False
+UiO-UVA	akutuzov	0.370 (21)	0.136 (72)	0.695 (8)	0.370 (26)	0.278 (28)	elmo_single_ap_cosine_1/2	2020-03-11 15:25:57.757338+00:00	elmo_single_top_ap_cosine_half.zip	False
+UiO-UVA	akutuzov	0.370 (21)	0.136 (72)	0.695 (8)	0.370 (26)	0.278 (28)	elmo_single_ap_cosine_1/3	2020-03-11 15:07:42.408415+00:00	elmo_single_top_ap_cosine.zip	False
+UiO-UVA	akutuzov	0.366 (22)	0.209 (55)	0.606 (17)	0.370 (26)	0.278 (28)	elmo_fine_detect_specific1/3	2020-03-12 13:15:05.119034+00:00	elmo_fine_detect_specific.zip	False
+UiO-UVA	akutuzov	0.366 (22)	0.209 (55)	0.606 (17)	0.370 (26)	0.278 (28)	elmo_bigone_ap_cosine_1/2	2020-03-11 16:38:52.743000+00:00	elmo_bigone_top_ap_cosine_half.zip	False
+UiO-UVA	akutuzov	0.366 (22)	0.209 (55)	0.606 (17)	0.370 (26)	0.278 (28)	elmo_bigone_ap_cosine_1/3	2020-03-11 16:38:25.269837+00:00	elmo_bigone_top_ap_cosine.zip	False
+UiO-UVA	akutuzov	0.282 (39)	0.166 (65)	0.311 (56)	0.373 (25)	0.278 (28)	bert_top_ap_cosine	2020-03-12 23:12:06.320685+00:00	bert_top_ap_cosine.zip	True
+UiO-UVA	akutuzov	0.233 (57)	0.130 (74)	0.227 (70)	0.297 (46)	0.278 (28)	bert_last4_detect_cosine 	2020-03-12 23:04:05.867910+00:00	bert_last4_detect_cosine.zip	False
+UiO-UVA	akutuzov	0.217 (61)	0.267 (37)	0.241 (65)	0.357 (32)	0.001 (82)	elmo_bigone_ap_jsd_1/3	2020-03-11 18:58:12.251082+00:00	elmo_bigone_top_ap_jsd.zip	False
+UiO-UVA	akutuzov	0.179 (76)	0.094 (77)	0.264 (62)	0.357 (32)	0.001 (82)	elmo_single_ap_jsd_1/3	2020-03-11 18:57:20.158163+00:00	elmo_single_top_ap_jsd.zip	False
+Unique	xc2628	0.324 (29)	0.458 (1)	0.527 (24)	0.148 (70)	0.162 (41)		2020-03-12 12:48:43.046618+00:00	answer.zip	False
+Unique	xc2628	0.275 (43)	0.264 (38)	0.527 (24)	0.148 (70)	0.162 (41)		2020-03-12 12:51:03.105709+00:00	answer.zip	False
+Unique	xc2628	0.247 (52)	0.153 (67)	0.527 (24)	0.148 (70)	0.162 (41)		2020-03-12 12:54:18.853826+00:00	answer.zip	True
+Unique	xc2628	0.201 (65)	0.345 (18)	0.522 (25)	-0.031 (97)	-0.033 (91)		2020-03-12 12:44:13.927982+00:00	answer.zip	False
+Unique	xc2628	0.089 (96)	0.057 (86)	0.220 (72)	-0.024 (96)	0.102 (60)		2020-02-29 16:30:17.542191+00:00	answer.zip	False
+University College Dublin 	nulty	0.234 (56)	0.307 (25)	0.216 (73)	0.069 (81)	0.344 (19)	res_weight_inv	2020-03-11 22:58:53.302670+00:00	answer.zip	True
+University College Dublin 	nulty	0.024 (116)	0.286 (32)	-0.179 (112)	0.095 (79)	-0.104 (98)		2020-03-11 22:46:13.442000+00:00	answer.zip	False
+University College Dublin 	nulty	0.023 (117)	-0.078 (102)	0.121 (90)	0.023 (84)	0.025 (78)	check_1_pw_ac	2020-03-11 20:47:12.305984+00:00	answer.zip	False
+University College Dublin 	nulty	-0.058 (127)	-0.324 (121)	0.094 (93)	-0.156 (106)	0.154 (45)	pairwise_average_clustering_full_absolute	2020-03-11 21:54:57.137610+00:00	answer.zip	False
+University College Dublin 	nulty	-0.058 (127)	-0.324 (121)	0.094 (93)	-0.156 (106)	0.154 (45)	pairwise average clustering full absolute	2020-03-11 21:54:02.360187+00:00	answer.zip	False
+UvA Anonymous	kztodorov	0.165 (80)	0.205 (58)	0.124 (89)	0.347 (34)	-0.015 (85)	v1	2020-03-06 10:48:50.019918+00:00	answer.zip	False
+UvA Anonymous	kztodorov	0.149 (83)	0.205 (58)	0.027 (98)	0.347 (34)	0.017 (79)	v9 - old english - median	2020-03-12 11:31:04.268714+00:00	answer.zip	True
+UvA Anonymous	kztodorov	0.149 (83)	0.205 (58)	0.027 (98)	0.347 (34)	0.017 (79)	v8 - old english mean	2020-03-12 11:26:57.641362+00:00	answer.zip	False
+UvA Anonymous	kztodorov	0.149 (83)	0.205 (58)	0.027 (98)	0.347 (34)	0.017 (79)	v2 - updated german+swedish	2020-03-11 19:05:36.573212+00:00	answer.zip	False
+UvA Anonymous	kztodorov	0.145 (84)	0.189 (60)	-0.031 (104)	0.304 (43)	0.119 (58)	v7 - reverted english	2020-03-11 22:31:28.515758+00:00	answer.zip	False
+UvA Anonymous	kztodorov	0.098 (94)	0.000 (94)	-0.031 (104)	0.304 (43)	0.119 (58)	v6 - added cosine distance	2020-03-11 22:15:35.521700+00:00	answer.zip	False
+UvA Anonymous	kztodorov	0.087 (98)	-0.043 (99)	0.027 (98)	0.347 (34)	0.017 (79)	v5 - median threshold	2020-03-11 20:57:40.566926+00:00	answer.zip	False
+UvA Anonymous	kztodorov	0.087 (98)	-0.043 (99)	0.027 (98)	0.347 (34)	0.017 (79)	v4 - mean threshold	2020-03-11 20:53:21.717417+00:00	answer.zip	False
+UvA Anonymous	kztodorov	0.087 (98)	-0.043 (99)	0.027 (98)	0.347 (34)	0.017 (79)	v3 - updated english	2020-03-11 20:46:08.501482+00:00	answer.zip	False
+UWB	pribanp	0.481 (6)	0.367 (11)	0.697 (6)	0.254 (55)	0.604 (1)	v7	2020-03-11 13:13:56.828933+00:00	map-ort-i.zip	False
+UWB	pribanp	0.481 (6)	0.367 (11)	0.697 (6)	0.254 (55)	0.604 (1)	v8	2020-03-11 13:14:41.137320+00:00	map-ort-i-globalThreshold.zip	False
+UWB	pribanp	0.469 (7)	0.421 (5)	0.696 (7)	0.251 (58)	0.509 (8)	v4	2020-03-11 13:11:46.784055+00:00	UWB_default_reveresed_binary_threshold.zip	False
+UWB	pribanp	0.469 (7)	0.421 (5)	0.696 (7)	0.251 (58)	0.509 (8)	v2	2020-03-11 13:10:28.530826+00:00	UWB_default_reversed.zip	False
+UWB	pribanp	0.455 (8)	0.365 (12)	0.687 (9)	0.181 (65)	0.587 (3)	v10	2020-03-11 13:16:00.446253+00:00	map-unsup-globalThreshold.zip	False
+UWB	pribanp	0.455 (8)	0.365 (12)	0.687 (9)	0.181 (65)	0.587 (3)	v9	2020-03-11 13:15:07.800375+00:00	map-unsup.zip	False
+UWB	pribanp	0.411 (14)	0.279 (33)	0.707 (4)	0.181 (66)	0.476 (10)	v1	2020-03-11 13:09:48.210824+00:00	UWB_default.zip	True
+UWB	pribanp	0.411 (14)	0.279 (33)	0.707 (4)	0.181 (66)	0.476 (10)	v3	2020-03-11 13:11:23.316716+00:00	UWB_default_binary_threshold.zip	False
+UWB	pribanp	0.194 (68)	0.138 (71)	0.189 (79)	0.307 (42)	0.142 (48)	v6	2020-03-11 13:13:30.325584+00:00	LDA-100-globalThreshold.zip	False
+UWB	pribanp	0.194 (68)	0.138 (71)	0.189 (79)	0.307 (42)	0.142 (48)	v5	2020-03-11 13:12:48.522392+00:00	LDA-100.zip	False
+Vani Kanjirangat 	Vani	0.194 (67)	0.028 (89)	0.176 (81)	0.253 (57)	0.321 (24)	v.3	2020-03-11 22:54:28.287354+00:00	answer.zip	True
+Vani Kanjirangat 	Vani	0.185 (74)	-0.008 (97)	0.176 (81)	0.253 (57)	0.321 (24)	v.1	2020-03-11 22:53:50.458879+00:00	answer.zip	False
+Vani Kanjirangat 	Vani	0.183 (75)	0.028 (89)	0.176 (81)	0.253 (57)	0.275 (30)	v1	2020-03-11 20:21:28.555279+00:00	answer.zip	False
+	semeval2020_baseline1_fd	-0.083 (128)	-0.217 (117)	0.014 (100)	0.020 (85)	-0.150 (100)	semeval2020_baseline1_fd	2020-03-09 22:08:20.268856+00:00	answer_fd.zip	True
+	semeval2020_baseline2_ct_ci_cd	0.144 (85)	0.022 (90)	0.216 (74)	0.359 (30)	-0.022 (88)	semeval2020_baseline2_cnt_ci_cd	2020-03-09 22:19:24.068809+00:00	answer_cnt_ci_cd.zip	True
+	semeval2020_baseline3_majorit	NaN (123)	NaN (95)	NaN (101)	NaN (90)	NaN (83)	semeval2020_baseline3_majority	2020-03-09 22:46:01.340781+00:00	majority.zip	True
