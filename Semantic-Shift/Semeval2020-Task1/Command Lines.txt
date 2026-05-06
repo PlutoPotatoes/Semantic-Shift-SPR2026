@@ -1,0 +1,10 @@
+python preprocess_semeval_corpora.py  --corpus_paths pathToCorpusSlicesSeparatedBy';' --target_path pathToSemEvalTargetFile --language language --lm_train_test_folder pathToOutputFolder
+
+python extract_embeddings.py --corpus_paths pathToPreprocessedCorpusSlicesSeparatedBy';' --target_path pathToSemEvalTargetFile --language language --path_to_fine_tuned_model pathToFineTunedModel --embeddings_path pathToOutputEmbeddingFile --concat 
+
+python calculate_semantic_change.py --language language --embeddings_path pathToInputEmbeddingFile --semeval_results pathToOutputResultsDir
+
+python make_semeval_answer_file.py --language language --results_file pathToInputResultsCSVFile --method clusteringMethod --target_path pathToSemEvalTargetFile
+
+python get_period_specific_clusters.py --language language --results_file pathToInputClusterLabelFile --target_path pathToSemEvalTargetFile
+

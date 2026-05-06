@@ -1,0 +1,10 @@
+*.npy
+*.pyc
+.idea
+runs
+models
+embeddings*
+semeval_results*
+answer*
+data*
+model/
