@@ -157,6 +157,10 @@ def gcs_get_dataset_json_data(credentials_path, bucket_name, data_blob_path):
         :param credentials_path: filepath for service_account.json
         :param bucket_name: Name of the GCS bucket holding the data file
         :param data_blob_path: path to .jsonl blob to extract and format
+    
+    Note: this dataloading method reads the entire .jsonl file into memory 
+    as a list of dictionaries, which is fine for small files but 
+    not suitable for large datasets. 
     '''
     credentials = service_account.Credentials.from_service_account_file(credentials_path)
     storage_client = storage.Client(credentials=credentials)

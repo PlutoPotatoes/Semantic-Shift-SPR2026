@@ -7,3 +7,5 @@ google-auth==2.49.1
 nltk==3.9.3
 numpy
 pyarrow
+gcsfs
+fsspec>=2023.10.0
