@@ -19,7 +19,7 @@ import gcsfs
 
 # ── Hyperparameters ───────────────────────────────────────────────
 model_name = "emanjavacas/MacBERTh"
-experiment_name = "McBERTh-Pretrain-v1"
+experiment_name = "McBERTh-Pretrain-final"
 epochs = 2
 learning_rate = 5e-5
 batch_size = 32
@@ -28,7 +28,7 @@ batch_size = 32
 # 2 GPUs: 256 / (32 * 2) = 4
 gradient_accumulation_steps = 8
 max_steps = math.ceil(2102849 / (batch_size * gradient_accumulation_steps)) * epochs
-max_steps = 50 # for testing only, comment out for full training
+#max_steps = 50 # for testing only, comment out for full training
 logging_steps = 100
 warmup_ratio = 0.05
 weight_decay = 0.01

@@ -16,7 +16,7 @@ aiplatform.init(
 
 job = aiplatform.CustomContainerTrainingJob(
     display_name="mcberth-pretrain-v1-test",
-    container_uri="us-docker.pkg.dev/nlp-research-sp26/mcberth-training/mcberth-training:test_mcberth_6_10_final",
+    container_uri="us-docker.pkg.dev/nlp-research-sp26/mcberth-training/mcberth-training:test_mcberth_6_11_final",
 )
 
 job.run(
@@ -24,7 +24,7 @@ job.run(
     accelerator_type="NVIDIA_TESLA_A100",
     accelerator_count=1,
     replica_count=1,
-    base_output_dir="gs://project3102-model-bucket/Training-Tests/McBERTh-Pretrain-v1",
+    base_output_dir="gs://project3102-model-bucket/Training-Tests/McBERTh-Pretrain-final",
 )
 
 print("Job submitted successfully!")
