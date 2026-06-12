@@ -29,7 +29,7 @@ batch_size = 32
 gradient_accumulation_steps = 8
 max_steps = math.ceil(2102849 / (batch_size * gradient_accumulation_steps)) * epochs
 max_steps = 50 # for testing only, comment out for full training
-# logging_steps = 100
+logging_steps = 100
 warmup_ratio = 0.05
 weight_decay = 0.01
 save_steps = 500
@@ -37,10 +37,10 @@ mlm_probability = 0.15
 gcs_credentials = "nlp-research-sp26-8499634f1c62.json"
 
 #temp parameters for quick testing
-max_steps = 10
-logging_steps = 2 
-save_steps = 5
-eval_steps = 5
+# max_steps = 10
+# logging_steps = 2 
+# save_steps = 5
+# eval_steps = 5
 
 
 # ── CUDA check ─────────────────────────────────────────────────────────
@@ -199,6 +199,10 @@ trainer = Trainer(
 print("Trainer built.", flush=True)
 
 print("starting training loop", flush=True)
+# Ensure all params are contiguous before training starts — non-contiguous
+# tensors cause safetensors to crash on checkpoint saves mid-training.
+for param in model.parameters():
+    param.data = param.data.contiguous()
 trainer.train(resume_from_checkpoint=False)
 print("training complete")
 
@@ -236,7 +240,9 @@ gcs_model_prefix = f"Training-Tests/{experiment_name}/best"
 for filename in os.listdir(save_path):
     local_file = os.path.join(save_path, filename)
     blob = bucket.blob(f"{gcs_model_prefix}/{filename}")
-    blob.upload_from_filename(local_file)
+    # Default timeout is 120s — not enough for large model weight files (~440MB).
+    # timeout=(connect_timeout, read/write_timeout) in seconds.
+    blob.upload_from_filename(local_file, timeout=(30, 600))
     print(f"Uploaded {filename} to gs://project3102-model-bucket/{gcs_model_prefix}/{filename}")
 
 print("Model upload to GCS")
