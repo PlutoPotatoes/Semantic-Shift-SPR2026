@@ -16,7 +16,7 @@ aiplatform.init(
 
 job = aiplatform.CustomContainerTrainingJob(
     display_name="mcberth-pretrain-v1-test",
-    container_uri="us-docker.pkg.dev/nlp-research-sp26/mcberth-training/mcberth-training:test_mcberth",
+    container_uri="us-docker.pkg.dev/nlp-research-sp26/mcberth-training/mcberth-training:test_mcberth_6_10_v1",
 )
 
 job.run(

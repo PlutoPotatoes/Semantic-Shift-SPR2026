@@ -29,12 +29,19 @@ batch_size = 32
 gradient_accumulation_steps = 8
 max_steps = math.ceil(2102849 / (batch_size * gradient_accumulation_steps)) * epochs
 max_steps = 50 # for testing only, comment out for full training
-logging_steps = 100
+# logging_steps = 100
 warmup_ratio = 0.05
 weight_decay = 0.01
 save_steps = 500
 mlm_probability = 0.15
 gcs_credentials = "nlp-research-sp26-8499634f1c62.json"
+
+#temp parameters for quick testing
+max_steps = 10
+logging_steps = 2 
+save_steps = 5
+eval_steps = 5
+
 
 # ── CUDA check ─────────────────────────────────────────────────────────
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -74,10 +81,9 @@ tokenizer.add_special_tokens(
 
 def tokenize_data(examples):
     result = tokenizer(examples["text"], max_length=512, truncation=True)
-    if tokenizer.is_fast:
-        result["word_ids"] = [result.word_ids(
-            i) for i in range(len(result["input_ids"]))]
-    return result
+    # word_ids are Python lists (not tensors) and not needed for MLM —
+    # keeping them causes accelerate to hang when moving eval batches to GPU.
+    return {k: v for k, v in result.items() if k != "word_ids"}
 
 
 
@@ -113,8 +119,8 @@ class ContiguousParamsCallback(TrainerCallback):
     def on_save(self, args, state, control, model=None, **kwargs):
         for name, param in model.named_parameters():
             if not param.data.is_contiguous():
-                print(f"[WARNING] Non-contiguous tensor found at save: {name}")
-                param.data = param.data.contiguous()
+                print(f"[WARNING] Non-contiguous tensor found at save: {name}", flush=True)
+            param.data = param.data.contiguous()
         return control
 
     def on_step_end(self, args, state, control, model=None, **kwargs):
@@ -124,20 +130,39 @@ class ContiguousParamsCallback(TrainerCallback):
                 if not param.data.is_contiguous():
                     print(f"[Step {state.global_step}] Non-contiguous: {name}")
 
+    def on_log(self, args, state, control, logs=None, **kwargs):
+        if logs is None:
+            return
+        step = state.global_step
+        total = state.max_steps
+        pct = (step / total * 100) if total else 0
+        loss = logs.get("loss", "N/A")
+        eval_loss = logs.get("eval_loss", None)
+        lr = logs.get("learning_rate", "N/A")
+        msg = f"[Step {step}/{total} | {pct:.1f}%] loss={loss} lr={lr}"
+        if eval_loss is not None:
+            msg += f" eval_loss={eval_loss}"
+        print(msg, flush=True)
+
 
 # ── Training ──────────────────────────────────────────────────────
 # Set all of our training parameters, define our Trainer object, start training.
 
 # Vertex AI sets AIP_MODEL_DIR automatically — use it as output dir
-print('Training start:')
+print('Training start:', flush=True)
 
 output_dir = os.environ.get("AIP_MODEL_DIR", f"Models/{experiment_name}")
 if not output_dir.startswith("gs://"):
-    print(f"ERROR: output_dir is not a GCS path: {output_dir}")
+    print(f"ERROR: output_dir is not a GCS path: {output_dir}", flush=True)
     sys.exit(1)
-print(f"Output directory: {output_dir}")
+print(f"Output directory: {output_dir}", flush=True)
 
+# Use a local logging dir — pointing logging_dir at gs:// can cause
+# os.makedirs / file-writer initialization to block on Vertex AI.
+local_logging_dir = "/tmp/tb_logs"
+print(f"Local logging dir: {local_logging_dir}", flush=True)
 
+print("Building TrainingArguments...", flush=True)
 training_args = TrainingArguments(
     output_dir=output_dir,
     per_device_train_batch_size=batch_size,
@@ -152,15 +177,16 @@ training_args = TrainingArguments(
     metric_for_best_model='eval_loss',
     greater_is_better=False,
     save_total_limit=2,
-    logging_dir=f"{output_dir}/logs",
+    logging_dir=local_logging_dir,
     logging_steps=logging_steps,
     warmup_ratio=warmup_ratio,
     learning_rate=learning_rate,
     weight_decay=weight_decay,
     optim='adamw_torch',
 )
+print("TrainingArguments built.", flush=True)
 
-
+print("Building Trainer...", flush=True)
 trainer = Trainer(
     model=model,
     args=training_args,
@@ -170,8 +196,10 @@ trainer = Trainer(
     callbacks=[EarlyStoppingCallback(
         early_stopping_patience=3, early_stopping_threshold=0.001), ContiguousParamsCallback()]
 )
+print("Trainer built.", flush=True)
 
-trainer.train()
+print("starting training loop", flush=True)
+trainer.train(resume_from_checkpoint=False)
 print("training complete")
 
 # ── Save ──────────────────────────────────────────────────────────
@@ -198,14 +226,24 @@ params = {
     "eval_loss": eval_loss,
 }
 
-# ── Save parameters ──────────────────────────────────────────────────────────
 credentials = service_account.Credentials.from_service_account_file(
     gcs_credentials)
 client = storage.Client(credentials=credentials)
 bucket = client.bucket("project3102-model-bucket")
+
+# ── Save model──────────────────────────────────────────────────────────
+gcs_model_prefix = f"Training-Tests/{experiment_name}/best"
+for filename in os.listdir(save_path):
+    local_file = os.path.join(save_path, filename)
+    blob = bucket.blob(f"{gcs_model_prefix}/{filename}")
+    blob.upload_from_filename(local_file)
+    print(f"Uploaded {filename} to gs://project3102-model-bucket/{gcs_model_prefix}/{filename}")
+
+print("Model upload to GCS")
+
+# ── Save parameters ──────────────────────────────────────────────────────────
 blob = bucket.blob(f"Training-Tests/{experiment_name}/parameters.json")
 blob.upload_from_string(json.dumps(params, indent=4),
                         content_type="application/json")
 print("Parameters saved to GCS.")
-
 
