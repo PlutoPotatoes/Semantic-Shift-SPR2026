@@ -47,7 +47,8 @@ def build_decade_balanced_stream(
         service_account_path=None,
         root="coha_sharded_full",
         split="train",
-        buffer_size=50_000,
+        stream_buffer_size=10_000,
+        interleave_buffer_size=50_000,
         seed=123,
         probabilities=None,
         stopping_strategy="all_exhausted",
@@ -62,7 +63,7 @@ def build_decade_balanced_stream(
     print(f"Data streamer: split={split}, {len(decades)} decades: {decades}")
 
     # Download all shards in parallel to local disk at startup
-    with ThreadPoolExecutor(max_workers=len(decades)) as pool:
+    with ThreadPoolExecutor(max_workers=8) as pool:
         local_paths = list(pool.map(
             lambda x: download_shards(service_account_path, root, split, x),
             decades
@@ -86,17 +87,16 @@ def build_decade_balanced_stream(
         )
 
         dataset = dataset.map(lambda x: {
-            'decade': str(x['decade']).removesuffix('s'),
             'text': f'<decade_{str(x["decade"]).removesuffix("s")}> {x["text"]}'
-        })
+        }).select_columns(['text'])
 
         if shuffle:
-            dataset = dataset.shuffle(buffer_size=buffer_size, seed=seed)
+            dataset = dataset.shuffle(buffer_size=stream_buffer_size, seed=seed)
         streams.append(dataset)
 
     mixed = interleave_datasets(streams, probabilities=probabilities,
                                 seed=seed, stopping_strategy=stopping_strategy)
 
-    if shuffle: # no need to shuffle for validation set
-        mixed = mixed.shuffle(buffer_size=buffer_size, seed=seed)
+    if shuffle:
+        mixed = mixed.shuffle(buffer_size=interleave_buffer_size, seed=seed)
     return mixed

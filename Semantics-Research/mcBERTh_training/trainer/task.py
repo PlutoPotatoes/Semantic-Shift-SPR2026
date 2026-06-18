@@ -5,21 +5,15 @@ from transformers import (
     TrainerCallback
 )
 from data_streamer import build_decade_balanced_stream, DECADES
+from datasets import Dataset as HFDataset
 import os
+import sys
 import json
 import math
-from google.cloud import storage
-from google.oauth2 import service_account
-import math
-#os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
-
 import torch
-import sys
-import gcsfs
 
 # ── Hyperparameters ───────────────────────────────────────────────
 model_name = "emanjavacas/MacBERTh"
-experiment_name = "McBERTh-Pretrain-final"
 epochs = 2
 learning_rate = 5e-5
 batch_size = 32
@@ -27,20 +21,23 @@ batch_size = 32
 # 1 GPU:  256 / (32 * 1) = 8
 # 2 GPUs: 256 / (32 * 2) = 4
 gradient_accumulation_steps = 8
-max_steps = math.ceil(2102849 / (batch_size * gradient_accumulation_steps)) * epochs
-#max_steps = 50 # for testing only, comment out for full training
-logging_steps = 100
+N = 2102849
+max_steps = math.ceil(N / (batch_size * gradient_accumulation_steps)) * epochs
 warmup_ratio = 0.05
 weight_decay = 0.01
-save_steps = 500
 mlm_probability = 0.15
-gcs_credentials = "nlp-research-sp26-8499634f1c62.json"
+save_total_limit = 3
+# save_steps = 500
+# logging_steps = 100
+early_stopping_patience = 5
+early_stopping_threshold = 0.001
+
+gcs_credentials = "nlp-research-sp26.json"
 
 #temp parameters for quick testing
-# max_steps = 10
-# logging_steps = 2 
-# save_steps = 5
-# eval_steps = 5
+max_steps = 8
+logging_steps = 2 
+save_steps = 2
 
 
 # ── CUDA check ─────────────────────────────────────────────────────────
@@ -52,15 +49,6 @@ else:
     print("ERROR: CUDA not available. Aborting training job.")
     sys.exit(1)
 
-# ── Bucket check ─────────────────────────────────────────────────────────
-fs = gcsfs.GCSFileSystem()
-print("Checking access to GCS bucket...")
-if fs.exists("project3102-model-bucket/Training-Tests/"):
-    print("Access to GCS bucket confirmed.")
-    bucket_name = "project3102-model-bucket/Training-Tests/"
-else:
-    print("ERROR: Cannot access GCS bucket. Aborting training job.")
-    sys.exit(1)
 
 # ── Tokenizer ─────────────────────────────────────────────────────
 # Here are are mostly just using the tokenizer our model already uses. 
@@ -86,7 +74,6 @@ def tokenize_data(examples):
     return {k: v for k, v in result.items() if k != "word_ids"}
 
 
-
 # ── Datasets ──────────────────────────────────────────────────────
 # COHA requires a license so we can't store it locally — shards are downloaded
 # from GCS to the VM's local disk at startup, then streamed during training.
@@ -95,13 +82,20 @@ print("building dataset")
 
 train_dataset = build_decade_balanced_stream(
     service_account_path=gcs_credentials)
+
 # No need to shuffle validation set
 val_dataset = build_decade_balanced_stream(
-    service_account_path=gcs_credentials, split='valid', shuffle=False)
+    service_account_path=gcs_credentials, split='valid', shuffle=False,
+    stopping_strategy="first_exhausted")
+
 train_dataset = train_dataset.map(
-    tokenize_data, batch_size=batch_size, batched=True)
+    tokenize_data, batch_size=batch_size, batched=True, remove_columns=["text"])
+
+print("Materializing validation set into memory...", flush=True)
 val_dataset = val_dataset.map(
-    tokenize_data,   batch_size=batch_size, batched=True)
+    tokenize_data, batch_size=batch_size, batched=True, remove_columns=["text"])
+val_dataset = HFDataset.from_list(list(val_dataset))
+print(f"Validation set ready: {len(val_dataset)} samples", flush=True)
 print("dataset complete, formatting model")
 
 # ── Model ─────────────────────────────────────────────────────────
@@ -115,52 +109,64 @@ data_collator = DataCollatorForLanguageModeling(
 )
 
 
+class MetricsCallback(TrainerCallback):
+    def __init__(self, output_dir, flush_every=10):
+        self.metrics_path = f"{output_dir.rstrip('/')}/metrics.jsonl"
+        self.flush_every = flush_every
+        self.buffer = []
+
+    def _flush(self):
+        if not self.buffer:
+            return
+        with open(self.metrics_path, 'a') as f:
+            f.write("\n".join(self.buffer) + "\n")
+        self.buffer = []
+
+    def on_log(self, args, state, control, logs=None, **kwargs):
+        if not logs:
+            return
+        # buffer the log entries in memory and only flush every N log events
+        # to reduce latency in writing to disk
+        self.buffer.append(json.dumps({"step": state.global_step, **logs}))
+        if len(self.buffer) >= self.flush_every:
+            self._flush()
+
+    def on_train_end(self, *_, **kwargs):
+        self._flush()
+
+
 class ContiguousParamsCallback(TrainerCallback):
     def on_save(self, args, state, control, model=None, **kwargs):
         for name, param in model.named_parameters():
             if not param.data.is_contiguous():
-                print(f"[WARNING] Non-contiguous tensor found at save: {name}", flush=True)
-            param.data = param.data.contiguous()
+                print(f"[WARNING] Non-contiguous tensor at save: {name}", flush=True)
+                param.data = param.data.contiguous()
         return control
 
-    def on_step_end(self, args, state, control, model=None, **kwargs):
-        # Check every N steps to narrow down when it happens
-        if state.global_step % 100 == 0:
-            for name, param in model.named_parameters():
-                if not param.data.is_contiguous():
-                    print(f"[Step {state.global_step}] Non-contiguous: {name}")
-
-    def on_log(self, args, state, control, logs=None, **kwargs):
-        if logs is None:
-            return
-        step = state.global_step
-        total = state.max_steps
-        pct = (step / total * 100) if total else 0
-        loss = logs.get("loss", "N/A")
-        eval_loss = logs.get("eval_loss", None)
-        lr = logs.get("learning_rate", "N/A")
-        msg = f"[Step {step}/{total} | {pct:.1f}%] loss={loss} lr={lr}"
-        if eval_loss is not None:
-            msg += f" eval_loss={eval_loss}"
-        print(msg, flush=True)
-
-
 # ── Training ──────────────────────────────────────────────────────
-# Set all of our training parameters, define our Trainer object, start training.
 
-# Vertex AI sets AIP_MODEL_DIR automatically — use it as output dir
 print('Training start:', flush=True)
 
-output_dir = os.environ.get("AIP_MODEL_DIR", f"Models/{experiment_name}")
-if not output_dir.startswith("gs://"):
-    print(f"ERROR: output_dir is not a GCS path: {output_dir}", flush=True)
-    sys.exit(1)
-print(f"Output directory: {output_dir}", flush=True)
+# Vertex AI sets AIP_MODEL_DIR automatically — use it as output dir
 
-# Use a local logging dir — pointing logging_dir at gs:// can cause
-# os.makedirs / file-writer initialization to block on Vertex AI.
-local_logging_dir = "/tmp/tb_logs"
-print(f"Local logging dir: {local_logging_dir}", flush=True)
+# However, it's necessary to map output_dir to Vertex AI's Cloud Storage FUSE Mount
+# Vertex AI custom training automatically mounts GCS buckets inside the training container 
+# using Cloud Storage FUSE at the /gcs/ path prefix.
+
+aip_model_dir = os.environ.get("AIP_MODEL_DIR")
+if aip_model_dir and aip_model_dir.startswith("gs://"):
+    output_dir = aip_model_dir.replace("gs://", "/gcs/", 1)
+    print(f"Translating GCS URI to FUSE path: {output_dir}", flush=True)
+else:
+    print(f"ERROR: AIP_MODEL_DIR not set or not a GCS path: {aip_model_dir}", flush=True)
+    sys.exit(1)
+
+aip_tb_log_dir = os.environ.get("AIP_TENSORBOARD_LOG_DIR")
+if aip_tb_log_dir and aip_tb_log_dir.startswith("gs://"):
+    logging_dir = aip_tb_log_dir.replace("gs://", "/gcs/", 1)
+else:
+    logging_dir = f"{output_dir.rstrip('/')}/logs"
+print(f"Logging dir: {logging_dir}", flush=True)
 
 print("Building TrainingArguments...", flush=True)
 training_args = TrainingArguments(
@@ -176,8 +182,9 @@ training_args = TrainingArguments(
     load_best_model_at_end=True,
     metric_for_best_model='eval_loss',
     greater_is_better=False,
-    save_total_limit=2,
-    logging_dir=local_logging_dir,
+    save_total_limit=save_total_limit,
+    dataloader_drop_last=False,
+    logging_dir=logging_dir,
     logging_steps=logging_steps,
     warmup_ratio=warmup_ratio,
     learning_rate=learning_rate,
@@ -194,62 +201,53 @@ trainer = Trainer(
     eval_dataset=val_dataset,
     data_collator=data_collator,
     callbacks=[EarlyStoppingCallback(
-        early_stopping_patience=3, early_stopping_threshold=0.001), ContiguousParamsCallback()]
+        early_stopping_patience=early_stopping_patience,
+        early_stopping_threshold=early_stopping_threshold),
+        ContiguousParamsCallback(),
+        MetricsCallback(output_dir)]
 )
 print("Trainer built.", flush=True)
 
+# ── Save hyperparameters and training config ──────────────────────────────────────
+params = {
+    "model_name": model_name,
+    "training_corpus_size": N,
+    "epochs_approximate": epochs,
+    "max_steps": max_steps,
+    "per_device_batch_size": batch_size,
+    "gradient_accumulation_steps": gradient_accumulation_steps,
+    "effective_batch_size": batch_size * gradient_accumulation_steps,
+    "learning_rate": learning_rate,
+    "warmup_ratio": warmup_ratio,
+    "weight_decay": weight_decay,
+    "optimizer": "adamw_torch",
+    "mlm_probability": mlm_probability,
+    "eval_steps": save_steps,
+    "save_steps": save_steps,
+    "save_total_limit": save_total_limit,
+    "early_stopping_patience": early_stopping_patience,
+    "early_stopping_threshold": early_stopping_threshold,
+}
+params_path = f"{output_dir.rstrip('/')}/hyperparameters.json"
+with open(params_path, 'w') as f:
+    json.dump(params, f, indent=4)
+print(f"Hyperparameters saved to {params_path}", flush=True)
+
+# ── Train ─────────────────────────────────────────────────────────
 print("starting training loop", flush=True)
 # Ensure all params are contiguous before training starts — non-contiguous
 # tensors cause safetensors to crash on checkpoint saves mid-training.
 for param in model.parameters():
     param.data = param.data.contiguous()
+
 trainer.train(resume_from_checkpoint=False)
 print("training complete")
 
-# ── Save ──────────────────────────────────────────────────────────
+# ── Save model ────────────────────────────────────────────────────
 print("saving model")
-save_path = f"{output_dir}/best"
+save_path = f"{output_dir.rstrip('/')}/best"
 trainer.save_model(save_path)
 tokenizer.save_pretrained(save_path)
 print(f"Model saved to {save_path}")
 
-# Save parameters JSON to GCS
-train_loss = [e['loss'] for e in trainer.state.log_history if 'loss' in e]
-eval_loss = [e['eval_loss']
-             for e in trainer.state.log_history if 'eval_loss' in e]
-
-params = {
-    "model_name": model_name,
-    "max_steps": max_steps,
-    "batch_size": batch_size,
-    "gradient_accumulation_steps": gradient_accumulation_steps,
-    "learning_rate": learning_rate,
-    "warmup_ratio": warmup_ratio,
-    "weight_decay": weight_decay,
-    "training_loss": train_loss,
-    "eval_loss": eval_loss,
-}
-
-credentials = service_account.Credentials.from_service_account_file(
-    gcs_credentials)
-client = storage.Client(credentials=credentials)
-bucket = client.bucket("project3102-model-bucket")
-
-# ── Save model──────────────────────────────────────────────────────────
-gcs_model_prefix = f"Training-Tests/{experiment_name}/best"
-for filename in os.listdir(save_path):
-    local_file = os.path.join(save_path, filename)
-    blob = bucket.blob(f"{gcs_model_prefix}/{filename}")
-    # Default timeout is 120s — not enough for large model weight files (~440MB).
-    # timeout=(connect_timeout, read/write_timeout) in seconds.
-    blob.upload_from_filename(local_file, timeout=(30, 600))
-    print(f"Uploaded {filename} to gs://project3102-model-bucket/{gcs_model_prefix}/{filename}")
-
-print("Model upload to GCS")
-
-# ── Save parameters ──────────────────────────────────────────────────────────
-blob = bucket.blob(f"Training-Tests/{experiment_name}/parameters.json")
-blob.upload_from_string(json.dumps(params, indent=4),
-                        content_type="application/json")
-print("Parameters saved to GCS.")
 

@@ -183,7 +183,7 @@ if __name__ == "__main__":
     destination_blob_prefix = "Upload-Test/" # Folder path in GCS
     local_dir = "Semantics-Research/Upload-Test"
     file = "Semantics-Research/Upload-Test/test.txt"
-    service_account_path = "Semantics-Research/nlp-research-sp26-8499634f1c62.json"
+    service_account_path = "Semantics-Research/nlp-research-sp26.json"
     #upload_folder(credentials_path=service_account_path, bucket_name=bucket_name, destination_blob_prefix=destination_blob_prefix, local_dir=local_dir)
     #upload_file(credentials_path=service_account_path, bucket_name=bucket_name, destination_blob_prefix=destination_blob_prefix, filepath=file)
     #download_file(credentials_path=service_account_path, bucket_name=bucket_name, file_blob_name='Upload-Test/test.txt', download_path='test.txt')
