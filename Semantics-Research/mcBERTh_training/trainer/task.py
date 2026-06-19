@@ -27,17 +27,17 @@ warmup_ratio = 0.05
 weight_decay = 0.01
 mlm_probability = 0.15
 save_total_limit = 3
-# save_steps = 500
-# logging_steps = 100
+save_steps = 500
+logging_steps = 100
 early_stopping_patience = 5
 early_stopping_threshold = 0.001
 
 gcs_credentials = "nlp-research-sp26.json"
 
 #temp parameters for quick testing
-max_steps = 8
-logging_steps = 2 
-save_steps = 2
+# max_steps = 8
+# logging_steps = 2 
+# save_steps = 2
 
 
 # ── CUDA check ─────────────────────────────────────────────────────────
@@ -231,7 +231,7 @@ params = {
 params_path = f"{output_dir.rstrip('/')}/hyperparameters.json"
 with open(params_path, 'w') as f:
     json.dump(params, f, indent=4)
-print(f"Hyperparameters saved to {params_path}", flush=True)
+print(f"Hyperparameters and training config saved to {params_path}", flush=True)
 
 # ── Train ─────────────────────────────────────────────────────────
 print("starting training loop", flush=True)
@@ -243,7 +243,7 @@ for param in model.parameters():
 trainer.train(resume_from_checkpoint=False)
 print("training complete")
 
-# ── Save model ────────────────────────────────────────────────────
+# ── Save best model ────────────────────────────────────────────────────
 print("saving model")
 save_path = f"{output_dir.rstrip('/')}/best"
 trainer.save_model(save_path)

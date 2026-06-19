@@ -9,7 +9,7 @@ with open(credentials_path) as f:
 
 
 # Set the tensorboard instance name 
-tensorboard_name = "mcberth-test" # mcberth-tensorboard
+tensorboard_name = "mcberth-tensorboard" 
 existing_tb = aiplatform.Tensorboard.list(filter='display_name="{tensorboard_name}"')
 tb = existing_tb[0] if existing_tb else aiplatform.Tensorboard.create(display_name=tensorboard_name)
 tensorboard_resource = tb.resource_name
@@ -24,7 +24,7 @@ aiplatform.init(
 
 job = aiplatform.CustomContainerTrainingJob(
     display_name="mcberth-pretrain-v1-test",
-    container_uri="us-docker.pkg.dev/nlp-research-sp26/mcberth-training/mcberth-training:test_mcberth_6_11_final",
+    container_uri="us-docker.pkg.dev/nlp-research-sp26/mcberth-training/mcberth-training:mcberth-decade-conditioned-v1",
 )
 
 job.run(
@@ -32,9 +32,10 @@ job.run(
     accelerator_type="NVIDIA_TESLA_A100",
     accelerator_count=1,
     replica_count=1,
-    base_output_dir="gs://project3102-model-bucket/Training-Tests/McBERTh-Pretrain-test",
+    base_output_dir="gs://project3102-model-bucket/McBERTh-domain-adaptation/McBERTh-decade-conditioned-v1",
     tensorboard=tensorboard_resource,
     service_account=service_account_email,
+    sync=False,
 )
 
 print("Job submitted successfully!")
