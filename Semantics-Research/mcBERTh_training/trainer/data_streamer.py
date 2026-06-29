@@ -52,7 +52,8 @@ def build_decade_balanced_stream(
         seed=123,
         probabilities=None,
         stopping_strategy="all_exhausted",
-        shuffle=True):
+        shuffle=True,
+        use_decade_tokens=True):
     """
     Return:
         A mixed IterableDataset, a streaming iterable.
@@ -86,9 +87,11 @@ def build_decade_balanced_stream(
             streaming=True, 
         )
 
-        dataset = dataset.map(lambda x: {
-            'text': f'<decade_{str(x["decade"]).removesuffix("s")}> {x["text"]}'
-        }).select_columns(['text'])
+        if use_decade_tokens:
+            dataset = dataset.map(lambda x: {
+                'text': f'<decade_{str(x["decade"]).removesuffix("s")}> {x["text"]}'
+            })
+        dataset = dataset.select_columns(['text'])
 
         if shuffle:
             dataset = dataset.shuffle(buffer_size=stream_buffer_size, seed=seed)

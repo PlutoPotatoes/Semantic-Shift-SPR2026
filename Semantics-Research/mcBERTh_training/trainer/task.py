@@ -13,8 +13,9 @@ import math
 import torch
 
 # ── Hyperparameters ───────────────────────────────────────────────
-model_name = "emanjavacas/MacBERTh"
-epochs = 2
+# model_name = "emanjavacas/MacBERTh"
+model_name = "bert-base-uncased"
+epochs = 3
 learning_rate = 5e-5
 batch_size = 32
 # gradient_accumulation_steps = (batchsize * 8) / (batchsize * #_GPU)
@@ -26,12 +27,14 @@ max_steps = math.ceil(N / (batch_size * gradient_accumulation_steps)) * epochs
 warmup_ratio = 0.05
 weight_decay = 0.01
 mlm_probability = 0.15
-save_total_limit = 3
+save_total_limit = 2
 save_steps = 500
 logging_steps = 100
 early_stopping_patience = 5
 early_stopping_threshold = 0.001
 
+# Set to False if training a decade-conditioned model
+use_decade_tokens = False
 gcs_credentials = "nlp-research-sp26.json"
 
 #temp parameters for quick testing
@@ -63,8 +66,9 @@ def get_date_tokens(decades):
 
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
-tokenizer.add_special_tokens(
-    {'additional_special_tokens': get_date_tokens(DECADES)})
+if use_decade_tokens:
+    tokenizer.add_special_tokens(
+        {'additional_special_tokens': get_date_tokens(DECADES)})
 
 
 def tokenize_data(examples):
@@ -81,12 +85,12 @@ def tokenize_data(examples):
 print("building dataset")
 
 train_dataset = build_decade_balanced_stream(
-    service_account_path=gcs_credentials)
+    service_account_path=gcs_credentials, use_decade_tokens=use_decade_tokens)
 
 # No need to shuffle validation set
 val_dataset = build_decade_balanced_stream(
     service_account_path=gcs_credentials, split='valid', shuffle=False,
-    stopping_strategy="first_exhausted")
+    stopping_strategy="first_exhausted", use_decade_tokens=use_decade_tokens)
 
 train_dataset = train_dataset.map(
     tokenize_data, batch_size=batch_size, batched=True, remove_columns=["text"])
@@ -211,6 +215,7 @@ print("Trainer built.", flush=True)
 # ── Save hyperparameters and training config ──────────────────────────────────────
 params = {
     "model_name": model_name,
+    "use_decade_tokens": use_decade_tokens,
     "training_corpus_size": N,
     "epochs_approximate": epochs,
     "max_steps": max_steps,

@@ -7,13 +7,14 @@ credentials = service_account.Credentials.from_service_account_file(credentials_
 with open(credentials_path) as f:
     service_account_email = json.load(f)['client_email']
 
+a100 = {"machine_type": "a2-highgpu-1g", 
+        "accelerator_type": "NVIDIA_TESLA_A100"}
+l4 = {"machine_type": "g2-standard-8", 
+      "accelerator_type": "NVIDIA_L4"}
 
-# Set the tensorboard instance name 
-tensorboard_name = "mcberth-tensorboard" 
-existing_tb = aiplatform.Tensorboard.list(filter='display_name="{tensorboard_name}"')
-tb = existing_tb[0] if existing_tb else aiplatform.Tensorboard.create(display_name=tensorboard_name)
-tensorboard_resource = tb.resource_name
-
+# tag = "mcberth-decade-conditioned-v1" # trained
+# tag = "mcberth-unconditioned-v1" # trained
+tag = "bert-base-uncased-v1"
 
 aiplatform.init(
     credentials=credentials,
@@ -22,17 +23,26 @@ aiplatform.init(
     staging_bucket="gs://project3102-model-bucket",
 )
 
+# Set the tensorboard instance name
+# tensorboard_name = "mcberth-tensorboard" # decade-conditioned
+# tensorboard_name = "mcberth-tensorboard-non-conditioned"
+tensorboard_name = "bert-tensorboard-non-conditioned"
+existing_tb = aiplatform.Tensorboard.list(filter=f'display_name="{tensorboard_name}"')
+tb = existing_tb[0] if existing_tb else aiplatform.Tensorboard.create(display_name=tensorboard_name)
+tensorboard_resource = tb.resource_name
+
 job = aiplatform.CustomContainerTrainingJob(
-    display_name="mcberth-pretrain-v1-test",
-    container_uri="us-docker.pkg.dev/nlp-research-sp26/mcberth-training/mcberth-training:mcberth-decade-conditioned-v1",
+    display_name="mcberth-pretrain-unconditioned-v1",
+    container_uri=f"us-docker.pkg.dev/nlp-research-sp26/mcberth-training/mcberth-training:{tag}"
 )
 
 job.run(
-    machine_type="a2-highgpu-1g",
-    accelerator_type="NVIDIA_TESLA_A100",
+    machine_type=l4["machine_type"],
+    accelerator_type=l4["accelerator_type"],
     accelerator_count=1,
     replica_count=1,
-    base_output_dir="gs://project3102-model-bucket/McBERTh-domain-adaptation/McBERTh-decade-conditioned-v1",
+    # base_output_dir=f"gs://project3102-model-bucket/McBERTh-domain-adaptation/{tag}",
+    base_output_dir=f"gs://project3102-model-bucket/BERT-domain-adaptation/{tag}",
     tensorboard=tensorboard_resource,
     service_account=service_account_email,
     sync=False,
